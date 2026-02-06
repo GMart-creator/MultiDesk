@@ -3,170 +3,460 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Support - MultiDesk</title>
+    <title>MultiDesk | Clean Workspaces for Windows</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        /* Custom scrollbar for the Privacy Policy box in dark mode */
-        .custom-scrollbar::-webkit-scrollbar {
-            width: 8px;
-        }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
-        .custom-scrollbar::-webkit-scrollbar-track {
-            background: #1e293b;
-            border-radius: 10px;
-        }
-
-        .custom-scrollbar::-webkit-scrollbar-thumb {
-            background: #475569;
-            border-radius: 10px;
-        }
-
-        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-            background: #64748b;
+        :root {
+            --accent: #3b82f6;
+            --bg-dark: #0a0a0c;
+            --card-bg: #16161a;
         }
 
         body {
-            background-color: #0f172a;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: #e2e8f0;
+            scroll-behavior: smooth;
         }
+
+        .glass {
+            background: rgba(22, 22, 26, 0.75);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .hero-gradient {
+            background: radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.12) 0%, transparent 70%);
+        }
+
+        .feature-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(59, 130, 246, 0.4);
+            box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.2);
+        }
+
+        .step-number {
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+        }
+
+        .pro-badge {
+            background: linear-gradient(90deg, #f59e0b 0%, #d97706 100%);
+        }
+
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: #111; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #333; border-radius: 10px; }
+
+        .page-content { transition: opacity 0.4s ease, transform 0.4s ease; }
+        .hidden-page { display: none; opacity: 0; transform: translateY(10px); }
     </style>
 </head>
-<body class="font-sans text-slate-200 antialiased">
+<body class="custom-scrollbar">
 
-    <!-- Container changed to max-w-full for full-width layout -->
-    <div class="max-w-full mx-auto px-6 md:px-12 lg:px-24 py-8 relative">
-        
-        <!-- Company Logo (GMArt Logo) -->
-        <div class="absolute top-4 right-6 md:top-8 md:right-12 lg:right-24">
-            <div class="w-16 h-16 md:w-24 md:h-24 bg-slate-800 shadow-2xl border border-slate-700 rounded-xl flex items-center justify-center overflow-hidden">
-                <img src="GMArt_Logo.jpg" alt="GMArt Logo" class="object-contain w-full h-full" onerror="this.src='https://via.placeholder.com/150/1e293b/cbd5e1?text=GMArt+Logo'">
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 glass">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3 cursor-pointer" onclick="showPage('home')">
+                <div class="w-10 h-10 bg-slate-800 rounded-xl flex items-center justify-center overflow-hidden border border-white/10">
+                    <img src="MultiDesk_Logo.jpg" alt="M" class="object-contain w-full h-full" onerror="this.src='https://via.placeholder.com/50/1e293b/cbd5e1?text=M'">
+                </div>
+                <span class="text-xl font-bold tracking-tighter uppercase">MULTIDESK</span>
             </div>
-        </div>
-
-        <!-- Header: App Icon and Name -->
-        <header class="flex flex-col items-center mb-16 mt-24 md:mt-8 text-center">
-            <div class="w-28 h-28 md:w-32 md:h-32 bg-slate-800 rounded-3xl shadow-2xl flex items-center justify-center mb-6 overflow-hidden border border-slate-700 p-1">
-                <img src="MultiDesk_Logo.jpg" alt="MultiDesk Icon" class="object-contain w-full h-full rounded-2xl" onerror="this.src='https://via.placeholder.com/200/1e293b/cbd5e1?text=MultiDesk'">
-            </div>
-            <h1 class="text-5xl font-extrabold text-white tracking-tight">MultiDesk</h1>
-            <p class="text-slate-400 mt-3 text-xl max-w-2xl">Official Help Center & Documentation</p>
-        </header>
-
-        <!-- Main Content Grid -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
             
-            <!-- Contact Section -->
-            <section class="bg-slate-800 p-8 rounded-3xl shadow-xl border border-slate-700 flex flex-col transition-all hover:border-slate-600">
-                <div class="flex items-center mb-6">
-                    <div class="p-4 bg-indigo-500/10 rounded-2xl mr-5 text-indigo-400">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                        </svg>
-                    </div>
-                    <h2 class="text-2xl font-bold text-white">Contact Us</h2>
-                </div>
-                <p class="text-slate-400 mb-8 text-base leading-relaxed flex-grow">Need help with MultiDesk? Our team is available to resolve technical issues or answer questions about features. Expect a response within 24-48 hours.</p>
-                <a href="mailto:MultiDesktop@hotmail.com" class="inline-flex items-center justify-center px-6 py-4 bg-indigo-600 text-white rounded-xl font-bold text-lg hover:bg-indigo-500 transition-all shadow-lg shadow-indigo-500/20 active:scale-95">
-                    MultiDesktop@hotmail.com
-                </a>
-            </section>
+            <div class="hidden md:flex space-x-8 text-sm font-medium text-gray-400">
+                <a href="javascript:void(0)" onclick="showPage('home')" class="hover:text-white transition">Home</a>
+                <a href="#features" class="hover:text-white transition">Features</a>
+                <a href="#pricing" class="hover:text-white transition">Pricing</a>
+                <a href="javascript:void(0)" onclick="showPage('support')" class="hover:text-white transition">Support</a>
+            </div>
 
-            <!-- Resources Section -->
-            <section class="bg-slate-800 p-8 rounded-3xl shadow-xl border border-slate-700 flex flex-col transition-all hover:border-slate-600">
-                <div>
-                    <div class="flex items-center mb-6">
-                        <div class="p-4 bg-emerald-500/10 rounded-2xl mr-5 text-emerald-400">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                            </svg>
-                        </div>
-                        <h2 class="text-2xl font-bold text-white">Helpful Resources</h2>
-                    </div>
-                    <ul class="space-y-4">
-                        <li>
-                            <a href="MultiDesk_User_Guide.pdf" target="_blank" class="flex items-center text-slate-300 hover:text-white hover:bg-slate-700/50 p-4 rounded-2xl transition-all group border border-transparent hover:border-slate-600">
-                                <div class="bg-slate-900 p-2 rounded-lg mr-4">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-slate-500 group-hover:text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-                                    </svg>
-                                </div>
-                                <span class="text-lg font-medium">User Manual (PDF)</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://youtu.be/OFUnZP_0LoI" target="_blank" class="flex items-center text-slate-300 hover:text-white hover:bg-slate-700/50 p-4 rounded-2xl transition-all group border border-transparent hover:border-slate-600">
-                                <div class="bg-slate-900 p-2 rounded-lg mr-4">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-slate-500 group-hover:text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
-                                    </svg>
-                                </div>
-                                <span class="text-lg font-medium">Video Tutorials</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </section>
+            <a href="https://apps.microsoft.com/detail/9PJH89938L7M" target="_blank" class="bg-blue-600 hover:bg-blue-700 px-6 py-2.5 rounded-full font-bold transition text-sm shadow-lg shadow-blue-600/20">
+                Get on Store
+            </a>
         </div>
+    </nav>
 
-        <!-- Privacy Policy Section - Spans full width below the grid -->
-        <section class="bg-slate-800 p-8 rounded-3xl shadow-xl border border-slate-700">
-            <h2 class="text-2xl font-bold mb-6 text-white flex items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 mr-3 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                </svg>
-                Privacy Policy
-            </h2>
-            <div class="h-96 overflow-y-auto bg-slate-900/50 p-8 rounded-2xl border border-slate-700 text-base text-slate-400 custom-scrollbar">
-                <h3 class="font-bold text-slate-200 text-xl mb-1">Privacy Policy for MultiDesk</h3>
-                <p class="mb-6 text-sm text-slate-500">Last updated: January 2026</p>
+    <!-- PAGE: HOME -->
+    <main id="home-page" class="page-content">
+        <!-- Hero Section -->
+        <section class="relative pt-40 pb-20 overflow-hidden hero-gradient">
+            <div class="max-w-7xl mx-auto px-6 text-center">
+                <div class="inline-block px-4 py-1.5 mb-8 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-400 text-xs font-bold uppercase tracking-widest">
+                    By GMArt Engineering
+                </div>
+                <h1 class="text-5xl md:text-7xl font-extrabold mb-8 tracking-tight leading-tight">
+                    Clean workspaces for Windows.<br> 
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-500">Instant switching, zero clutter.</span>
+                </h1>
+                <p class="text-gray-400 text-lg md:text-xl max-w-3xl mx-auto mb-6 leading-relaxed">
+                    MultiDesk is a lightweight workspace organizer that keeps your Windows setup focused. Create multiple desktop-like workspaces with their own shortcuts and wallpapers, arrange icons freely with snap-to-grid, and switch context instantly using a floating numbered bar.
+                </p>
+                <p class="text-gray-500 text-md max-w-2xl mx-auto mb-12 italic">
+                    Instead of one chaotic desktop full of icons, MultiDesk gives you dedicated spaces for Work, Media, Gaming, Study—or any workflow you want. Your Windows desktop stays in the background, but your day-to-day navigation becomes faster, cleaner, and easier to maintain.
+                </p>
                 
-                <div class="space-y-6 leading-relaxed text-left">
-                    <div>
-                        <h4 class="font-bold text-slate-300 text-lg">1. Introduction</h4>
-                        <p>This Privacy Policy explains how we handle information when you use MultiDesk (the "Application") on Windows 11. We are committed to protecting your privacy and being transparent about our practices.</p>
-                    </div>
+                <div class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+                    <a href="https://apps.microsoft.com/detail/9PJH89938L7M" target="_blank" class="w-full sm:w-auto px-10 py-4 bg-white text-black font-extrabold rounded-2xl hover:bg-blue-600 hover:text-white transition duration-300 flex items-center justify-center shadow-xl">
+                        <i class="fab fa-microsoft mr-3"></i> Get it on Microsoft Store
+                    </a>
+                    <a href="#features" class="w-full sm:w-auto px-10 py-4 glass font-bold rounded-2xl hover:bg-white/10 transition border border-white/10">
+                        View features / Watch demo
+                    </a>
+                </div>
 
-                    <div>
-                        <h4 class="font-bold text-slate-300 text-lg">2. Information Collection and Use</h4>
-                        <ul class="list-disc ml-6 space-y-3">
-                            <li><strong>No Personal Data:</strong> The Application does not collect, transmit, or store any personally identifiable information (such as name, email address, or phone number).</li>
-                            <li><strong>Offline Operation:</strong> The Application is designed to function locally on your device. Any data you input into the Application remains on your local storage and is not uploaded to our servers.</li>
+                <!-- Video Thumbnail Preview -->
+                <div class="mt-24 relative mx-auto max-w-5xl px-4">
+                    <a href="https://youtu.be/OFUnZP_0LoI" target="_blank" class="block group relative rounded-[2rem] border border-white/10 overflow-hidden shadow-2xl shadow-blue-500/20">
+                        <img src="https://images.unsplash.com/photo-1547082299-de196ea013d6?auto=format&fit=crop&q=80&w=2000" alt="MultiDesk Workspace" class="w-full h-[350px] md:h-[550px] object-cover transition duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 flex items-center justify-center bg-black/40 group-hover:bg-black/20 transition">
+                            <div class="w-24 h-24 bg-blue-600 rounded-full flex items-center justify-center text-3xl shadow-2xl transition transform group-hover:scale-110">
+                                <i class="fas fa-play ml-1 text-white"></i>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-8 left-8 glass px-5 py-3 rounded-2xl text-sm font-bold flex items-center gap-3 border border-white/20">
+                            <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                            <span>Workspace Persistence Active</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Feature Cards Section -->
+        <section id="features" class="py-32 bg-[#08080a]">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-20">
+                    <h2 class="text-4xl font-extrabold mb-4">Core Capabilities</h2>
+                    <p class="text-gray-500 max-w-2xl mx-auto">Everything you need to regain control over your desktop environment.</p>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Card 1 -->
+                    <div class="p-10 rounded-[2.5rem] glass feature-card flex flex-col">
+                        <div class="w-14 h-14 bg-blue-500/10 text-blue-500 rounded-2xl flex items-center justify-center mb-8 text-2xl border border-blue-500/20">
+                            <i class="fas fa-layer-group"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4">Workspaces, not windows</h3>
+                        <p class="text-gray-400 mb-8 leading-relaxed">MultiDesk focuses on organization, not window management. Each workspace has its own set of Windows shortcuts (.lnk) and an optional wallpaper.</p>
+                        <ul class="mt-auto space-y-3 text-sm font-medium text-gray-300">
+                            <li class="flex items-center"><i class="fas fa-check text-blue-500 mr-3"></i> Independent shortcuts</li>
+                            <li class="flex items-center"><i class="fas fa-check text-blue-500 mr-3"></i> Optional wallpapers</li>
+                            <li class="flex items-center"><i class="fas fa-check text-blue-500 mr-3"></i> Fast floating bar switch</li>
                         </ul>
                     </div>
 
-                    <div>
-                        <h4 class="font-bold text-slate-300 text-lg">3. Third-Party Services</h4>
-                        <ul class="list-disc ml-6 space-y-3">
-                            <li><strong>Microsoft Store:</strong> The Application is distributed through the Microsoft Store. Microsoft may collect certain telemetry and usage data according to its own Privacy Policy to facilitate downloads and updates.</li>
-                            <li><strong>No Third-Party Sharing:</strong> We do not share any data with third-party advertising or analytics companies.</li>
+                    <!-- Card 2 -->
+                    <div class="p-10 rounded-[2.5rem] glass feature-card flex flex-col">
+                        <div class="w-14 h-14 bg-purple-500/10 text-purple-500 rounded-2xl flex items-center justify-center mb-8 text-2xl border border-purple-500/20">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4">High performance by design</h3>
+                        <p class="text-gray-400 mb-8 leading-relaxed">Optimized for responsiveness. Workspaces load quickly, wallpaper files are handled safely (no file locks), and layouts are stored locally.</p>
+                        <ul class="mt-auto space-y-3 text-sm font-medium text-gray-300">
+                            <li class="flex items-center"><i class="fas fa-check text-purple-500 mr-3"></i> Lightweight runtime</li>
+                            <li class="flex items-center"><i class="fas fa-check text-purple-500 mr-3"></i> Zero wallpaper file locks</li>
+                            <li class="flex items-center"><i class="fas fa-check text-purple-500 mr-3"></i> Local-first storage</li>
                         </ul>
                     </div>
 
+                    <!-- Card 3 -->
+                    <div class="p-10 rounded-[2.5rem] glass feature-card flex flex-col">
+                        <div class="w-14 h-14 bg-green-500/10 text-green-500 rounded-2xl flex items-center justify-center mb-8 text-2xl border border-green-500/20">
+                            <i class="fas fa-user-focus"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4">Designed for focused workflows</h3>
+                        <p class="text-gray-400 mb-8 leading-relaxed">Customize your setup how you actually work. Your icon layout is saved per workspace, so organization stays consistent across restarts.</p>
+                        <ul class="mt-auto space-y-3 text-sm font-medium text-gray-300">
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i> Saved icon layouts</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i> Drag & drop + snap-to-grid</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i> Easy shortcut management</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Detailed Features -->
+        <section class="py-24 border-y border-white/5">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="grid lg:grid-cols-2 gap-16 items-center mb-32">
                     <div>
-                        <h4 class="font-bold text-slate-300 text-lg">4. Permissions</h4>
-                        <p>The Application only requests permissions that are strictly necessary for its core functionality, such as access to local storage for saving your workspace preferences.</p>
+                        <h2 class="text-4xl font-bold mb-6">Floating Workspace Bar</h2>
+                        <p class="text-gray-400 text-lg leading-relaxed mb-6">
+                            The dockable floating bar lets you switch workspaces in one click. Pin it to any screen edge, keep it always-on-top, and access Settings instantly. A tray icon provides quick actions and a clean “always running” experience.
+                        </p>
+                    </div>
+                    <div class="glass p-8 rounded-3xl border border-white/10">
+                        <h3 class="text-xl font-bold mb-6">Desktop-like Workspace Window</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Each workspace is shown in a stable dedicated window that can run in full screen while keeping the Windows taskbar visible. This gives you a clean desktop-style surface without breaking standard Windows behavior.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <div class="order-2 lg:order-1 glass p-8 rounded-3xl border border-white/10">
+                        <h3 class="text-xl font-bold mb-6">Layout Persistence</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Arrange icons with drag & drop. Snap-to-grid keeps the desktop clean and aligned. Layout is saved per workspace so it stays the same after switching or restarting.
+                        </p>
+                    </div>
+                    <div class="order-1 lg:order-2">
+                        <h2 class="text-4xl font-bold mb-6">Shortcut Management</h2>
+                        <p class="text-gray-400 text-lg leading-relaxed mb-6">
+                            MultiDesk works with standard Windows shortcuts (.lnk). Add shortcuts from Settings or by opening the workspace items folder. Right‑click shortcuts to copy or move them between workspaces, or delete links to the Recycle Bin.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works -->
+        <section class="py-32 bg-black">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-20">
+                    <h2 class="text-4xl font-extrabold mb-4">How it works</h2>
+                    <p class="text-gray-500">Master your new setup in seconds.</p>
+                </div>
+                <div class="grid md:grid-cols-5 gap-8">
+                    <div class="text-center">
+                        <div class="w-12 h-12 step-number rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-6">1</div>
+                        <h4 class="font-bold mb-2">Create</h4>
+                        <p class="text-sm text-gray-500">Open Settings and add workspaces for each activity.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-12 h-12 step-number rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-6">2</div>
+                        <h4 class="font-bold mb-2">Add</h4>
+                        <p class="text-sm text-gray-500">Import .lnk shortcuts or paste them in the folder.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-12 h-12 step-number rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-6">3</div>
+                        <h4 class="font-bold mb-2">Customize</h4>
+                        <p class="text-sm text-gray-500">Set a wallpaper for clear visual context.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-12 h-12 step-number rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-6">4</div>
+                        <h4 class="font-bold mb-2">Arrange</h4>
+                        <p class="text-sm text-gray-500">Drag & drop icons and let snap-to-grid align them.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-12 h-12 step-number rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-6">5</div>
+                        <h4 class="font-bold mb-2">Switch</h4>
+                        <p class="text-sm text-gray-500">Use the floating bar to jump between tasks anytime.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing / Trial vs Pro -->
+        <section id="pricing" class="py-32 bg-[#0c0c0e]">
+            <div class="max-w-5xl mx-auto px-6">
+                <div class="text-center mb-20">
+                    <h2 class="text-4xl font-extrabold mb-4">Pricing</h2>
+                    <p class="text-gray-500">Try it for free, unlock everything with a one-time purchase.</p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="p-10 glass rounded-[2.5rem] border-white/5">
+                        <h3 class="text-2xl font-bold mb-2">Trial</h3>
+                        <div class="text-4xl font-extrabold mb-8">Free</div>
+                        <ul class="space-y-4 text-gray-400 mb-10">
+                            <li class="flex items-center"><i class="fas fa-check-circle text-gray-600 mr-3"></i> Up to 2 workspaces</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-gray-600 mr-3"></i> Up to 5 shortcuts per workspace</li>
+                            <li class="flex items-center"><i class="fas fa-info-circle text-gray-700 mr-3 text-xs"></i> Extra items may be hidden</li>
+                        </ul>
+                        <div class="text-xs text-gray-600">Included in the Store download</div>
                     </div>
 
-                    <div>
-                        <h4 class="font-bold text-slate-300 text-lg">5. Changes to This Policy</h4>
-                        <p>We may update this Privacy Policy from time to time. Any changes will be posted within this document or updated on the official Microsoft Store listing.</p>
+                    <div class="p-10 bg-blue-600/10 rounded-[2.5rem] border border-blue-500/30 relative">
+                        <div class="absolute top-8 right-8 pro-badge px-4 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest text-white">One-time</div>
+                        <h3 class="text-2xl font-bold mb-2 text-blue-400">Pro Add-on</h3>
+                        <div class="text-4xl font-extrabold mb-8">Upgrade</div>
+                        <ul class="space-y-4 text-gray-200 mb-10">
+                            <li class="flex items-center"><i class="fas fa-star text-yellow-500 mr-3"></i> Unlimited workspaces</li>
+                            <li class="flex items-center"><i class="fas fa-star text-yellow-500 mr-3"></i> Unlimited shortcuts per workspace</li>
+                            <li class="flex items-center"><i class="fas fa-star text-yellow-500 mr-3"></i> Multi-PC restore via Microsoft Account</li>
+                        </ul>
+                        <a href="https://apps.microsoft.com/detail/9PJH89938L7M" target="_blank" class="block w-full text-center py-4 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-2xl transition">Unlock Pro</a>
                     </div>
+                </div>
+            </div>
+        </section>
 
-                    <div class="pt-4 border-t border-slate-700">
-                        <h4 class="font-bold text-slate-300 text-lg">6. Contact Us</h4>
-                        <p>If you have any questions or suggestions about this Privacy Policy, do not hesitate to contact us at: <a href="mailto:MultiDesktop@hotmail.com" class="text-indigo-400 font-semibold underline hover:text-indigo-300 transition-colors">MultiDesktop@hotmail.com</a></p>
+        <!-- Data & Trust -->
+        <section class="py-24 bg-black">
+            <div class="max-w-4xl mx-auto px-6 text-center">
+                <h3 class="text-2xl font-bold mb-8">Data & Privacy</h3>
+                <div class="grid md:grid-cols-2 gap-8 text-left">
+                    <div class="glass p-8 rounded-3xl">
+                        <h4 class="font-bold mb-4 flex items-center"><i class="fas fa-hdd mr-3 text-blue-500"></i> Local Storage</h4>
+                        <p class="text-sm text-gray-400 font-mono bg-black/40 p-3 rounded-lg">%LocalAppData%\MultiDesk\Workspaces\</p>
+                        <p class="text-sm text-gray-500 mt-4">Workspaces and layouts are stored entirely on your device. We don't require an online account.</p>
+                    </div>
+                    <div class="glass p-8 rounded-3xl">
+                        <h4 class="font-bold mb-4 flex items-center"><i class="fas fa-shield-alt mr-3 text-green-500"></i> Secure Transactions</h4>
+                        <p class="text-sm text-gray-500">All purchases are handled by the Microsoft Store. MultiDesk only checks your entitlement status to unlock Pro features.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="py-32 bg-[#08080a]">
+            <div class="max-w-3xl mx-auto px-6">
+                <h2 class="text-4xl font-extrabold mb-12 text-center">FAQ</h2>
+                <div class="space-y-6">
+                    <div class="glass p-8 rounded-2xl border border-white/5">
+                        <h4 class="font-bold text-lg mb-3">Does MultiDesk replace Windows Virtual Desktops?</h4>
+                        <p class="text-gray-400 leading-relaxed">No. MultiDesk is a workspace organizer for shortcuts and wallpapers. It does not move your open windows between desktops.</p>
+                    </div>
+                    <div class="glass p-8 rounded-2xl border border-white/5">
+                        <h4 class="font-bold text-lg mb-3">What shortcut types are supported?</h4>
+                        <p class="text-gray-400 leading-relaxed">MultiDesk displays standard Windows .lnk shortcuts.</p>
+                    </div>
+                    <div class="glass p-8 rounded-2xl border border-white/5">
+                        <h4 class="font-bold text-lg mb-3">Can I move/copy shortcuts between workspaces?</h4>
+                        <p class="text-gray-400 leading-relaxed">Yes. Use the right‑click menu on an icon to move or copy it to another workspace.</p>
+                    </div>
+                    <div class="glass p-8 rounded-2xl border border-white/5">
+                        <h4 class="font-bold text-lg mb-3">Where is my layout saved?</h4>
+                        <p class="text-gray-400 leading-relaxed">Each workspace stores its icon positions locally (layout persistence per workspace).</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Footer -->
-        <footer class="mt-16 text-center text-slate-500 text-sm border-t border-slate-800 pt-10 pb-8">
-            <p class="font-medium">&copy; 2026 GMArt. All rights reserved.</p>
-            <p class="mt-2 text-xs opacity-60">MultiDesk is a trademark of GMArt. Designed for Windows 11 productivity.</p>
+        <footer class="py-20 border-t border-white/5">
+            <div class="max-w-7xl mx-auto px-6 text-center">
+                <div class="mb-10 flex justify-center">
+                    <img src="GMArt_Logo.jpg" alt="GMArt" class="w-14 h-14 rounded-xl opacity-60">
+                </div>
+                <h2 class="text-2xl font-bold mb-4 tracking-tighter uppercase">MULTIDESK</h2>
+                <p class="text-gray-500 mb-8 max-w-md mx-auto">Workspace management for Windows 11/10.</p>
+                <div class="flex justify-center space-x-6 text-gray-400 mb-10">
+                    <a href="mailto:MultiDesktop@hotmail.com" class="hover:text-blue-500 transition">Contact Support</a>
+                    <a href="javascript:void(0)" onclick="showPage('support')" class="hover:text-blue-500 transition">Privacy Policy</a>
+                </div>
+                <p class="text-gray-600 text-xs">
+                    © 2026 GMArt Engineering. All rights reserved.
+                </p>
+            </div>
         </footer>
+    </main>
 
-    </div>
+    <!-- PAGE: SUPPORT -->
+    <main id="support-page" class="page-content hidden-page pt-32 pb-20">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h1 class="text-4xl font-bold mb-4">Support & Resources</h1>
+                <p class="text-gray-500">Everything you need to get the most out of MultiDesk.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <!-- Video Tutorial -->
+                <div class="glass p-10 rounded-3xl border-blue-500/20">
+                    <div class="w-12 h-12 bg-red-500/10 text-red-500 rounded-xl flex items-center justify-center mb-6 text-xl">
+                        <i class="fab fa-youtube"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Video Tutorial</h3>
+                    <p class="text-gray-400 mb-8 text-sm">Watch the official tutorial to learn how to configure your workspaces and manage shortcuts efficiently.</p>
+                    <a href="https://youtu.be/BtNQf6rtWvo" target="_blank" class="flex items-center text-blue-400 font-bold hover:text-blue-300 transition group">
+                        Watch on YouTube <i class="fas fa-external-link-alt ml-2 text-xs transition group-hover:translate-x-1"></i>
+                    </a>
+                </div>
 
+                <!-- Documentation PDF -->
+                <div class="glass p-10 rounded-3xl border-purple-500/20">
+                    <div class="w-12 h-12 bg-purple-500/10 text-purple-500 rounded-xl flex items-center justify-center mb-6 text-xl">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">User Guide (PDF)</h3>
+                    <p class="text-gray-400 mb-8 text-sm">Download the comprehensive PDF guide for offline reading, covering all advanced features and settings.</p>
+                    <a href="#" class="flex items-center text-blue-400 font-bold hover:text-blue-300 transition group">
+                        Download PDF Guide <i class="fas fa-download ml-2 text-xs transition group-hover:translate-y-1"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-16">
+                <div class="glass p-10 rounded-3xl">
+                    <div class="w-12 h-12 bg-blue-500/10 text-blue-500 rounded-xl flex items-center justify-center mb-6 text-xl">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-6">Contact Us</h3>
+                    <p class="text-gray-400 mb-8">Need technical help? Email us and we'll respond within 24-48 hours.</p>
+                    <a href="mailto:MultiDesktop@hotmail.com" class="inline-block px-8 py-3 bg-blue-600 rounded-xl font-bold text-white transition hover:bg-blue-700">MultiDesktop@hotmail.com</a>
+                </div>
+                <div class="glass p-10 rounded-3xl">
+                    <div class="w-12 h-12 bg-green-500/10 text-green-500 rounded-xl flex items-center justify-center mb-6 text-xl">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-6">Restoring Pro</h3>
+                    <p class="text-gray-400 mb-8">Pro is tied to your Microsoft Store account. Use "Restore Purchases" in Settings on any PC.</p>
+                    <a href="https://apps.microsoft.com/detail/9PJH89938L7M" target="_blank" class="text-blue-500 font-bold hover:underline">View in Microsoft Store</a>
+                </div>
+            </div>
+
+            <!-- Privacy Section -->
+            <div class="glass p-10 rounded-3xl">
+                <h3 class="text-xl font-bold mb-6 flex items-center">
+                    <i class="fas fa-user-shield mr-3 text-blue-500"></i> Privacy Policy
+                </h3>
+                <div class="text-gray-400 text-sm space-y-4 leading-relaxed max-h-96 overflow-y-auto custom-scrollbar pr-4">
+                    <p><strong>1. Data Minimization:</strong> MultiDesk does not collect personal data. All shortcut information and layouts are stored locally on your device.</p>
+                    <p><strong>2. Telemetry:</strong> Standard anonymous telemetry is provided by the Microsoft Store to help us fix crashes and improve stability.</p>
+                    <p><strong>3. Local Storage:</strong> No information is sent to external servers. Your workspace structure and preferences exist only on your machine.</p>
+                    <p><strong>4. Microsoft Store:</strong> All financial transactions are managed by Microsoft. We do not have access to your payment methods.</p>
+                </div>
+            </div>
+
+            <div class="mt-12 text-center">
+                <button onclick="showPage('home')" class="text-blue-500 font-bold hover:text-blue-400 transition">
+                    <i class="fas fa-arrow-left mr-2"></i> Back to Home
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function showPage(pageId) {
+            const home = document.getElementById('home-page');
+            const support = document.getElementById('support-page');
+            
+            home.classList.add('hidden-page');
+            support.classList.add('hidden-page');
+            
+            setTimeout(() => {
+                if (pageId === 'home') {
+                    home.style.display = 'block';
+                    support.style.display = 'none';
+                    setTimeout(() => home.classList.remove('hidden-page'), 50);
+                } else {
+                    home.style.display = 'none';
+                    support.style.display = 'block';
+                    setTimeout(() => support.classList.remove('hidden-page'), 50);
+                }
+                window.scrollTo(0, 0);
+            }, 100);
+        }
+
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.style.background = 'rgba(10, 10, 12, 0.95)';
+                nav.style.padding = '0.5rem 0';
+            } else {
+                nav.style.background = 'rgba(22, 22, 26, 0.75)';
+                nav.style.padding = '0';
+            }
+        });
+    </script>
 </body>
 </html>
