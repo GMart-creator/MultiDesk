@@ -32,69 +32,75 @@
 </head>
 <body class="font-sans text-slate-200 antialiased">
 
-    <div class="max-w-4xl mx-auto px-4 py-8 relative">
+    <!-- Container changed to max-w-full for full-width layout -->
+    <div class="max-w-full mx-auto px-6 md:px-12 lg:px-24 py-8 relative">
         
         <!-- Company Logo (GMArt Logo) -->
-        <div class="absolute top-4 right-4 md:top-8 md:right-8">
+        <div class="absolute top-4 right-6 md:top-8 md:right-12 lg:right-24">
             <div class="w-16 h-16 md:w-24 md:h-24 bg-slate-800 shadow-2xl border border-slate-700 rounded-xl flex items-center justify-center overflow-hidden">
                 <img src="GMArt_Logo.jpg" alt="GMArt Logo" class="object-contain w-full h-full" onerror="this.src='https://via.placeholder.com/150/1e293b/cbd5e1?text=GMArt+Logo'">
             </div>
         </div>
 
         <!-- Header: App Icon and Name -->
-        <header class="flex flex-col items-center mb-12 mt-24 md:mt-8 text-center">
+        <header class="flex flex-col items-center mb-16 mt-24 md:mt-8 text-center">
             <div class="w-28 h-28 md:w-32 md:h-32 bg-slate-800 rounded-3xl shadow-2xl flex items-center justify-center mb-6 overflow-hidden border border-slate-700 p-1">
                 <img src="MultiDesk_Logo.jpg" alt="MultiDesk Icon" class="object-contain w-full h-full rounded-2xl" onerror="this.src='https://via.placeholder.com/200/1e293b/cbd5e1?text=MultiDesk'">
             </div>
-            <h1 class="text-4xl font-extrabold text-white tracking-tight">MultiDesk</h1>
-            <p class="text-slate-400 mt-2 text-lg max-w-md">Official Help Center & Documentation</p>
+            <h1 class="text-5xl font-extrabold text-white tracking-tight">MultiDesk</h1>
+            <p class="text-slate-400 mt-3 text-xl max-w-2xl">Official Help Center & Documentation</p>
         </header>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+        <!-- Main Content Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
             
             <!-- Contact Section -->
-            <section class="bg-slate-800 p-6 rounded-2xl shadow-xl border border-slate-700 flex flex-col transition-all hover:border-slate-600">
-                <div class="flex items-center mb-4">
-                    <div class="p-3 bg-indigo-500/10 rounded-full mr-4 text-indigo-400">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            <section class="bg-slate-800 p-8 rounded-3xl shadow-xl border border-slate-700 flex flex-col transition-all hover:border-slate-600">
+                <div class="flex items-center mb-6">
+                    <div class="p-4 bg-indigo-500/10 rounded-2xl mr-5 text-indigo-400">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                         </svg>
                     </div>
-                    <h2 class="text-xl font-semibold text-white">Contact Us</h2>
+                    <h2 class="text-2xl font-bold text-white">Contact Us</h2>
                 </div>
-                <p class="text-slate-400 mb-6 text-sm leading-relaxed flex-grow">Need help with MultiDesk? Our team is available to resolve technical issues or answer questions about features.</p>
-                <a href="mailto:MultiDesktop@hotmail.com" class="inline-flex items-center justify-center px-4 py-2 bg-indigo-600 text-white rounded-lg font-medium hover:bg-indigo-500 transition-colors shadow-lg shadow-indigo-500/20">
+                <p class="text-slate-400 mb-8 text-base leading-relaxed flex-grow">Need help with MultiDesk? Our team is available to resolve technical issues or answer questions about features. Expect a response within 24-48 hours.</p>
+                <a href="mailto:MultiDesktop@hotmail.com" class="inline-flex items-center justify-center px-6 py-4 bg-indigo-600 text-white rounded-xl font-bold text-lg hover:bg-indigo-500 transition-all shadow-lg shadow-indigo-500/20 active:scale-95">
                     MultiDesktop@hotmail.com
                 </a>
             </section>
 
             <!-- Resources Section -->
-            <section class="bg-slate-800 p-6 rounded-2xl shadow-xl border border-slate-700 flex flex-col transition-all hover:border-slate-600">
+            <section class="bg-slate-800 p-8 rounded-3xl shadow-xl border border-slate-700 flex flex-col transition-all hover:border-slate-600">
                 <div>
-                    <div class="flex items-center mb-4">
-                        <div class="p-3 bg-emerald-500/10 rounded-full mr-4 text-emerald-400">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                    <div class="flex items-center mb-6">
+                        <div class="p-4 bg-emerald-500/10 rounded-2xl mr-5 text-emerald-400">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                             </svg>
                         </div>
-                        <h2 class="text-xl font-semibold text-white">Helpful Resources</h2>
+                        <h2 class="text-2xl font-bold text-white">Helpful Resources</h2>
                     </div>
-                    <ul class="space-y-3">
+                    <ul class="space-y-4">
                         <li>
-                            <a href="MultiDesk_User_Guide.pdf" target="_blank" class="flex items-center text-slate-300 hover:text-white hover:bg-slate-700/50 p-2 -ml-2 rounded-lg transition-all group border border-transparent hover:border-slate-600">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3 text-slate-500 group-hover:text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-                                </svg>
-                                <span>User Manual (PDF)</span>
+                            <a href="MultiDesk_User_Guide.pdf" target="_blank" class="flex items-center text-slate-300 hover:text-white hover:bg-slate-700/50 p-4 rounded-2xl transition-all group border border-transparent hover:border-slate-600">
+                                <div class="bg-slate-900 p-2 rounded-lg mr-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-slate-500 group-hover:text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                                    </svg>
+                                </div>
+                                <span class="text-lg font-medium">User Manual (PDF)</span>
                             </a>
                         </li>
                         <li>
-                            <a href="https://youtu.be/OFUnZP_0LoI" target="_blank" class="flex items-center text-slate-300 hover:text-white hover:bg-slate-700/50 p-2 -ml-2 rounded-lg transition-all group border border-transparent hover:border-slate-600">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3 text-slate-500 group-hover:text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
-                                </svg>
-                                <span>Video Tutorials</span>
+                            <a href="https://youtu.be/OFUnZP_0LoI" target="_blank" class="flex items-center text-slate-300 hover:text-white hover:bg-slate-700/50 p-4 rounded-2xl transition-all group border border-transparent hover:border-slate-600">
+                                <div class="bg-slate-900 p-2 rounded-lg mr-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-slate-500 group-hover:text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+                                    </svg>
+                                </div>
+                                <span class="text-lg font-medium">Video Tutorials</span>
                             </a>
                         </li>
                     </ul>
@@ -102,62 +108,62 @@
             </section>
         </div>
 
-        <!-- Privacy Policy Section -->
-        <section class="bg-slate-800 p-6 rounded-2xl shadow-xl border border-slate-700">
-            <h2 class="text-xl font-semibold mb-4 text-white flex items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <!-- Privacy Policy Section - Spans full width below the grid -->
+        <section class="bg-slate-800 p-8 rounded-3xl shadow-xl border border-slate-700">
+            <h2 class="text-2xl font-bold mb-6 text-white flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 mr-3 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                 </svg>
                 Privacy Policy
             </h2>
-            <div class="h-80 overflow-y-auto bg-slate-900/50 p-6 rounded-xl border border-slate-700 text-sm text-slate-400 custom-scrollbar">
-                <h3 class="font-bold text-slate-200 mb-1">Privacy Policy for MultiDesk</h3>
-                <p class="mb-4 text-xs text-slate-500">Last updated: January 2026</p>
+            <div class="h-96 overflow-y-auto bg-slate-900/50 p-8 rounded-2xl border border-slate-700 text-base text-slate-400 custom-scrollbar">
+                <h3 class="font-bold text-slate-200 text-xl mb-1">Privacy Policy for MultiDesk</h3>
+                <p class="mb-6 text-sm text-slate-500">Last updated: January 2026</p>
                 
-                <div class="space-y-4 leading-relaxed text-left">
+                <div class="space-y-6 leading-relaxed text-left">
                     <div>
-                        <h4 class="font-bold text-slate-300">1. Introduction</h4>
-                        <p>This Privacy Policy explains how we handle information when you use MultiDesk (the "Application") on Windows 11. We are committed to protecting your privacy.</p>
+                        <h4 class="font-bold text-slate-300 text-lg">1. Introduction</h4>
+                        <p>This Privacy Policy explains how we handle information when you use MultiDesk (the "Application") on Windows 11. We are committed to protecting your privacy and being transparent about our practices.</p>
                     </div>
 
                     <div>
-                        <h4 class="font-bold text-slate-300">2. Information Collection and Use</h4>
-                        <ul class="list-disc ml-5 space-y-2">
+                        <h4 class="font-bold text-slate-300 text-lg">2. Information Collection and Use</h4>
+                        <ul class="list-disc ml-6 space-y-3">
                             <li><strong>No Personal Data:</strong> The Application does not collect, transmit, or store any personally identifiable information (such as name, email address, or phone number).</li>
                             <li><strong>Offline Operation:</strong> The Application is designed to function locally on your device. Any data you input into the Application remains on your local storage and is not uploaded to our servers.</li>
                         </ul>
                     </div>
 
                     <div>
-                        <h4 class="font-bold text-slate-300">3. Third-Party Services</h4>
-                        <ul class="list-disc ml-5 space-y-2">
+                        <h4 class="font-bold text-slate-300 text-lg">3. Third-Party Services</h4>
+                        <ul class="list-disc ml-6 space-y-3">
                             <li><strong>Microsoft Store:</strong> The Application is distributed through the Microsoft Store. Microsoft may collect certain telemetry and usage data according to its own Privacy Policy to facilitate downloads and updates.</li>
                             <li><strong>No Third-Party Sharing:</strong> We do not share any data with third-party advertising or analytics companies.</li>
                         </ul>
                     </div>
 
                     <div>
-                        <h4 class="font-bold text-slate-300">4. Permissions</h4>
-                        <p>The Application only requests permissions that are strictly necessary for its core functionality (e.g., local file access).</p>
+                        <h4 class="font-bold text-slate-300 text-lg">4. Permissions</h4>
+                        <p>The Application only requests permissions that are strictly necessary for its core functionality, such as access to local storage for saving your workspace preferences.</p>
                     </div>
 
                     <div>
-                        <h4 class="font-bold text-slate-300">5. Changes to This Policy</h4>
-                        <p>We may update this Privacy Policy from time to time. Any changes will be posted within this document or updated on the Microsoft Store page.</p>
+                        <h4 class="font-bold text-slate-300 text-lg">5. Changes to This Policy</h4>
+                        <p>We may update this Privacy Policy from time to time. Any changes will be posted within this document or updated on the official Microsoft Store listing.</p>
                     </div>
 
-                    <div>
-                        <h4 class="font-bold text-slate-300">6. Contact Us</h4>
-                        <p>If you have any questions or suggestions about this Privacy Policy, do not hesitate to contact us at: <a href="mailto:MultiDesktop@hotmail.com" class="text-indigo-400 underline hover:text-indigo-300 transition-colors">MultiDesktop@hotmail.com</a></p>
+                    <div class="pt-4 border-t border-slate-700">
+                        <h4 class="font-bold text-slate-300 text-lg">6. Contact Us</h4>
+                        <p>If you have any questions or suggestions about this Privacy Policy, do not hesitate to contact us at: <a href="mailto:MultiDesktop@hotmail.com" class="text-indigo-400 font-semibold underline hover:text-indigo-300 transition-colors">MultiDesktop@hotmail.com</a></p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Footer -->
-        <footer class="mt-12 text-center text-slate-500 text-xs border-t border-slate-800 pt-8">
-            <p>&copy; 2026 GMArt. All rights reserved.</p>
-            <p class="mt-1 text-[10px]">MultiDesk is a trademark of GMArt.</p>
+        <footer class="mt-16 text-center text-slate-500 text-sm border-t border-slate-800 pt-10 pb-8">
+            <p class="font-medium">&copy; 2026 GMArt. All rights reserved.</p>
+            <p class="mt-2 text-xs opacity-60">MultiDesk is a trademark of GMArt. Designed for Windows 11 productivity.</p>
         </footer>
 
     </div>
