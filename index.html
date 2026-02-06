@@ -210,7 +210,7 @@
                 <h2 class="text-2xl font-bold mb-4 tracking-tighter uppercase">MULTIDESK</h2>
                 <div class="flex justify-center space-x-6 text-gray-400 mb-10">
                     <a href="javascript:void(0)" onclick="showPage('support')" class="hover:text-blue-500 transition">Support</a>
-                    <a href="javascript:void(0)" onclick="showPage('support')" class="hover:text-blue-500 transition">Privacy Policy</a>
+                    <a href="#privacy" class="hover:text-blue-500 transition" onclick="showPage('support'); setTimeout(() => document.getElementById('privacy').scrollIntoView(), 200)">Privacy Policy</a>
                 </div>
                 <p class="text-gray-600 text-xs">© 2026 GMArt Engineering. All rights reserved.</p>
             </div>
@@ -255,6 +255,31 @@
                 <a href="mailto:MultiDesktop@hotmail.com" class="inline-block px-8 py-3 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-2xl transition shadow-lg shadow-blue-600/20">
                     MultiDesktop@hotmail.com
                 </a>
+            </div>
+
+            <!-- Privacy Policy Section -->
+            <div id="privacy" class="glass p-10 rounded-[2.5rem] border-white/5 text-left mb-12">
+                <h2 class="text-3xl font-bold mb-8">Privacy Policy</h2>
+                <div class="space-y-6 text-gray-400 text-sm leading-relaxed">
+                    <p>At MultiDesk, we value your privacy. This policy explains how our application handles information.</p>
+                    
+                    <div>
+                        <h4 class="text-white font-bold mb-2 uppercase tracking-widest text-[10px]">Data Collection</h4>
+                        <p>MultiDesk is a local productivity tool. We do not collect, store, or transmit any personal data, desktop files, or browsing history to external servers. All workspace configurations and shortcut links are stored locally on your device.</p>
+                    </div>
+
+                    <div>
+                        <h4 class="text-white font-bold mb-2 uppercase tracking-widest text-[10px]">Microsoft Store</h4>
+                        <p>As the app is distributed via the Microsoft Store, Microsoft may collect basic telemetry data as outlined in their privacy policy. We do not have access to your personal identity or payment information.</p>
+                    </div>
+
+                    <div>
+                        <h4 class="text-white font-bold mb-2 uppercase tracking-widest text-[10px]">Permissions</h4>
+                        <p>The app requires permissions to manage desktop icons and change system wallpapers to provide its core functionality. These actions are performed exclusively on your local machine.</p>
+                    </div>
+
+                    <p class="pt-4 border-t border-white/5">For further inquiries regarding privacy, please contact us at MultiDesktop@hotmail.com.</p>
+                </div>
             </div>
 
             <div class="mt-12 text-center">
