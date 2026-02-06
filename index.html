@@ -56,6 +56,15 @@
 
         .page-content { transition: opacity 0.4s ease, transform 0.4s ease; }
         .hidden-page { display: none; opacity: 0; transform: translateY(10px); }
+        
+        .floating-icons-container {
+            perspective: 1000px;
+        }
+        
+        .messy-overlay {
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(2px);
+        }
     </style>
 </head>
 <body class="custom-scrollbar">
@@ -111,20 +120,42 @@
                     </a>
                 </div>
 
-                <!-- Video Thumbnail Preview -->
-                <div class="mt-24 relative mx-auto max-w-5xl px-4">
-                    <a href="https://youtu.be/OFUnZP_0LoI" target="_blank" class="block group relative rounded-[2rem] border border-white/10 overflow-hidden shadow-2xl shadow-blue-500/20">
-                        <img src="https://images.unsplash.com/photo-1547082299-de196ea013d6?auto=format&fit=crop&q=80&w=2000" alt="MultiDesk Workspace" class="w-full h-[350px] md:h-[550px] object-cover transition duration-700 group-hover:scale-105">
-                        <div class="absolute inset-0 flex items-center justify-center bg-black/40 group-hover:bg-black/20 transition">
-                            <div class="w-24 h-24 bg-blue-600 rounded-full flex items-center justify-center text-3xl shadow-2xl transition transform group-hover:scale-110">
+                <!-- Windows 11 Styled Thumbnail Preview -->
+                <div class="mt-24 relative mx-auto max-w-5xl px-4 floating-icons-container">
+                    <a href="https://youtu.be/BtNQf6rtWvo" target="_blank" class="block group relative rounded-[2rem] border border-white/10 overflow-hidden shadow-2xl shadow-blue-500/20">
+                        <!-- Main Windows 11 Desktop Image (Clean) -->
+                        <img src="https://images.unsplash.com/photo-1624555130581-1d9cca783bc0?auto=format&fit=crop&q=80&w=2000" alt="Windows 11 Clean Desktop" class="w-full h-[350px] md:h-[550px] object-cover transition duration-700 group-hover:scale-105">
+                        
+                        <!-- Messy Desktop Comparison Overlay (Only visible on hover or as a toggle effect) -->
+                        <div class="absolute inset-0 messy-overlay flex flex-wrap p-10 opacity-0 group-hover:opacity-40 transition-opacity duration-500 pointer-events-none">
+                             <!-- Simulate hundreds of small icon outlines to represent clutter -->
+                             <div class="grid grid-cols-12 gap-4 w-full opacity-50">
+                                 <script>
+                                     for(let i=0; i<60; i++) {
+                                         document.write('<div class="w-8 h-8 bg-white/20 rounded-sm"></div>');
+                                     }
+                                 </script>
+                             </div>
+                        </div>
+
+                        <div class="absolute inset-0 flex flex-col items-center justify-center bg-black/20 group-hover:bg-black/10 transition">
+                            <div class="w-24 h-24 bg-blue-600 rounded-full flex items-center justify-center text-3xl shadow-2xl transition transform group-hover:scale-110 mb-4">
                                 <i class="fas fa-play ml-1 text-white"></i>
                             </div>
+                            <span class="text-white font-bold tracking-widest uppercase text-xs glass px-4 py-2 rounded-full">Watch Demo: From Mess to Order</span>
                         </div>
+                        
                         <div class="absolute bottom-8 left-8 glass px-5 py-3 rounded-2xl text-sm font-bold flex items-center gap-3 border border-white/20">
-                            <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                            <span>Workspace Persistence Active</span>
+                            <i class="fab fa-windows text-blue-400"></i>
+                            <span>Optimized for Windows 11</span>
                         </div>
                     </a>
+                    
+                    <!-- Floating Badge for "Clean Workspace" -->
+                    <div class="hidden lg:block absolute -top-6 -right-6 glass p-6 rounded-3xl border border-blue-500/30 shadow-2xl animate-bounce">
+                         <div class="text-blue-400 font-black text-xl mb-1">90% Cleaner</div>
+                         <div class="text-xs text-gray-400 uppercase font-bold tracking-tighter">Desktop Organization</div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -366,7 +397,7 @@
                         <i class="fab fa-youtube"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-4">Video Tutorial</h3>
-                    <p class="text-gray-400 mb-8 text-sm">Watch the official tutorial to learn how to configure your workspaces and manage shortcuts efficiently.</p>
+                    <p class="text-gray-400 mb-8 text-sm">Guarda il tutorial ufficiale per imparare a configurare i tuoi spazi di lavoro e gestire le scorciatoie in modo efficiente.</p>
                     <a href="https://youtu.be/BtNQf6rtWvo" target="_blank" class="flex items-center text-blue-400 font-bold hover:text-blue-300 transition group">
                         Watch on YouTube <i class="fas fa-external-link-alt ml-2 text-xs transition group-hover:translate-x-1"></i>
                     </a>
@@ -378,8 +409,8 @@
                         <i class="fas fa-file-pdf"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-4">User Guide (PDF)</h3>
-                    <p class="text-gray-400 mb-8 text-sm">Download the comprehensive PDF guide for offline reading, covering all advanced features and settings.</p>
-                    <a href="#" class="flex items-center text-blue-400 font-bold hover:text-blue-300 transition group">
+                    <p class="text-gray-400 mb-8 text-sm">Scarica la guida completa in formato PDF per la consultazione offline, coprendo tutte le funzioni e le impostazioni avanzate.</p>
+                    <a href="https://github.com/GMart-creator/MultiDesk/blob/main/MultiDesk_User_Guide.pdf" target="_blank" class="flex items-center text-blue-400 font-bold hover:text-blue-300 transition group">
                         Download PDF Guide <i class="fas fa-download ml-2 text-xs transition group-hover:translate-y-1"></i>
                     </a>
                 </div>
