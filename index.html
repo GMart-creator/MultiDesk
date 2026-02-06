@@ -115,7 +115,7 @@
                         <!-- Thumbnail image from GitHub -->
                         <img src="https://github.com/GMArt-creator/MultiDesk/blob/main/Busy%20Desktop.png?raw=true" alt="Confused user in front of a desktop full of icons" class="w-full h-[400px] md:h-[600px] object-cover opacity-80 group-hover:opacity-100 transition-opacity">
                         
-                        <!-- Central Play Action -->
+                        <!-- Central Play Action - Fixed URL -->
                         <a href="https://youtu.be/OFUnZP_0LoI" target="_blank" class="absolute inset-0 flex flex-col items-center justify-center bg-black/40 hover:bg-black/20 transition-all duration-300">
                             <div class="w-24 h-24 bg-blue-600 rounded-full flex items-center justify-center text-3xl shadow-2xl transition transform group-hover:scale-110 mb-4">
                                 <i class="fas fa-play ml-1 text-white"></i>
@@ -209,7 +209,7 @@
                 </div>
                 <h2 class="text-2xl font-bold mb-4 tracking-tighter uppercase">MULTIDESK</h2>
                 <div class="flex justify-center space-x-6 text-gray-400 mb-10">
-                    <a href="mailto:MultiDesktop@hotmail.com" class="hover:text-blue-500 transition">Support</a>
+                    <a href="javascript:void(0)" onclick="showPage('support')" class="hover:text-blue-500 transition">Support</a>
                     <a href="javascript:void(0)" onclick="showPage('support')" class="hover:text-blue-500 transition">Privacy Policy</a>
                 </div>
                 <p class="text-gray-600 text-xs">© 2026 GMArt Engineering. All rights reserved.</p>
@@ -243,6 +243,18 @@
                     <p class="text-gray-400 mb-8 text-sm">Full documentation in PDF format.</p>
                     <a href="https://raw.githubusercontent.com/GMArt-creator/MultiDesk/main/MultiDesk_User_Guide.pdf" target="_blank" class="text-blue-400 font-bold hover:underline">Open PDF</a>
                 </div>
+            </div>
+
+            <!-- Email Support Section -->
+            <div class="glass p-10 rounded-[2.5rem] border-white/5 text-center mb-12">
+                <div class="w-12 h-12 bg-blue-500/10 text-blue-500 rounded-xl flex items-center justify-center mb-6 text-xl mx-auto">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-4">Direct Email Support</h3>
+                <p class="text-gray-400 mb-6 max-w-md mx-auto">Have specific questions or feedback? Contact our engineering team directly.</p>
+                <a href="mailto:MultiDesktop@hotmail.com" class="inline-block px-8 py-3 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-2xl transition shadow-lg shadow-blue-600/20">
+                    MultiDesktop@hotmail.com
+                </a>
             </div>
 
             <div class="mt-12 text-center">
