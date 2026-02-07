@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -56,146 +56,155 @@
         .floating-icons-container {
             perspective: 1000px;
         }
+
+        /* Effetto per il logo testuale nella nav */
+        .nav-logo-text {
+            height: 32px;
+            filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.3));
+            transition: transform 0.3s ease;
+        }
+        .nav-logo-text:hover {
+            transform: scale(1.05);
+        }
     </style>
 </head>
 <body class="custom-scrollbar">
 
-    <!-- Navigation -->
+    <!-- Navigazione -->
     <nav class="fixed w-full z-50 glass">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             <div class="flex items-center space-x-3 cursor-pointer" onclick="showPage('home')">
                 <div class="w-10 h-10 bg-slate-800 rounded-xl flex items-center justify-center overflow-hidden border border-white/10">
                     <img src="MultiDesk_Logo.jpg" alt="M" class="object-contain w-full h-full" onerror="this.src='https://via.placeholder.com/50/1e293b/cbd5e1?text=M'">
                 </div>
-                <span class="text-xl font-bold tracking-tighter uppercase">MULTIDESK</span>
+                <!-- Logo testuale MultiDesk -->
+                <img src="https://github.com/GMArt-creator/MultiDesk/blob/main/Multidesk_Logo_Text.png?raw=true" alt="MultiDesk by GMArt" class="nav-logo-text hidden sm:block">
+                <span class="text-xl font-bold tracking-tighter uppercase sm:hidden">MULTIDESK</span>
             </div>
             
             <div class="hidden md:flex space-x-8 text-sm font-medium text-gray-400">
                 <a href="javascript:void(0)" onclick="showPage('home')" class="hover:text-white transition">Home</a>
-                <a href="#features" class="hover:text-white transition">Features</a>
-                <a href="#pricing" class="hover:text-white transition">Pricing</a>
-                <a href="javascript:void(0)" onclick="showPage('support')" class="hover:text-white transition">Support</a>
+                <a href="#features" class="hover:text-white transition">Funzionalità</a>
+                <a href="#pricing" class="hover:text-white transition">Prezzi</a>
+                <a href="javascript:void(0)" onclick="showPage('support')" class="hover:text-white transition">Supporto</a>
             </div>
 
-            <a href="https://apps.microsoft.com/detail/9PJH89938L7M" target="_blank" class="bg-blue-600 hover:bg-blue-700 px-6 py-2.5 rounded-full font-bold transition text-sm shadow-lg shadow-blue-600/20">
-                Download from Store
+            <!-- Pulsante con icona Microsoft Store -->
+            <a href="https://apps.microsoft.com/detail/9PJH89938L7M" target="_blank" class="bg-blue-600 hover:bg-blue-700 px-6 py-2.5 rounded-full font-bold transition text-sm shadow-lg shadow-blue-600/20 flex items-center gap-2">
+                <i class="fab fa-microsoft text-base"></i>
+                <span>Scarica dallo Store</span>
             </a>
         </div>
     </nav>
 
-    <!-- PAGE: HOME -->
+    <!-- PAGINA: HOME -->
     <main id="home-page" class="page-content">
-        <!-- Hero Section -->
+        <!-- Sezione Hero -->
         <section class="relative pt-40 pb-20 overflow-hidden hero-gradient">
             <div class="max-w-7xl mx-auto px-6 text-center">
                 <div class="inline-block px-4 py-1.5 mb-8 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-400 text-xs font-bold uppercase tracking-widest">
                     By GMArt Engineering
                 </div>
                 <h1 class="text-5xl md:text-7xl font-extrabold mb-8 tracking-tight leading-tight">
-                    Clean workspaces for Windows.<br> 
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-500">Instant switch, zero clutter.</span>
+                    Workspace puliti per Windows.<br> 
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-500">Switch istantaneo, zero caos.</span>
                 </h1>
                 <p class="text-gray-400 text-lg md:text-xl max-w-3xl mx-auto mb-6 leading-relaxed">
-                    MultiDesk is a lightweight organizer that keeps your Windows setup focused. Create multiple virtual desktops with independent shortcuts and optional wallpapers, switching contexts instantly with a floating numbered bar.
+                    MultiDesk è un organizzatore leggero che mantiene il tuo setup Windows focalizzato. Crea desktop virtuali con scorciatoie indipendenti e sfondi dedicati, cambiando contesto istantaneamente.
                 </p>
                 
                 <div class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
                     <a href="https://apps.microsoft.com/detail/9PJH89938L7M" target="_blank" class="w-full sm:w-auto px-10 py-4 bg-white text-black font-extrabold rounded-2xl hover:bg-blue-600 hover:text-white transition duration-300 flex items-center justify-center shadow-xl">
-                        <i class="fab fa-microsoft mr-3"></i> Get it on Microsoft Store
+                        <i class="fab fa-microsoft mr-3"></i> Microsoft Store
                     </a>
-                    <a href="#features" class="w-full sm:w-auto px-10 py-4 glass font-bold rounded-2xl hover:bg-white/10 transition border border-white/10">
-                        Features / Watch Demo
+                    <a href="#features" class="w-full sm:w-auto px-10 py-4 glass font-bold rounded-2xl hover:bg-white/10 transition border border-white/10 text-center">
+                        Funzionalità / Demo
                     </a>
                 </div>
 
-                <!-- Hero Image (Busy Desktop) -->
+                <!-- Immagine Hero -->
                 <div class="mt-24 relative mx-auto max-w-5xl px-4 floating-icons-container">
                     <div class="relative group rounded-[2.5rem] border border-white/10 overflow-hidden shadow-2xl shadow-blue-500/20 bg-gray-900">
+                        <img src="https://github.com/GMArt-creator/MultiDesk/blob/main/Busy%20Desktop.png?raw=true" alt="Desktop disordinato vs MultiDesk" class="w-full h-[400px] md:h-[600px] object-cover opacity-80 group-hover:opacity-100 transition-opacity">
                         
-                        <!-- Thumbnail image from GitHub -->
-                        <img src="https://github.com/GMArt-creator/MultiDesk/blob/main/Busy%20Desktop.png?raw=true" alt="Confused user in front of a desktop full of icons" class="w-full h-[400px] md:h-[600px] object-cover opacity-80 group-hover:opacity-100 transition-opacity">
-                        
-                        <!-- Central Play Action - Fixed URL -->
                         <a href="https://youtu.be/hndHw3lDBZU" target="_blank" class="absolute inset-0 flex flex-col items-center justify-center bg-black/40 hover:bg-black/20 transition-all duration-300">
                             <div class="w-24 h-24 bg-blue-600 rounded-full flex items-center justify-center text-3xl shadow-2xl transition transform group-hover:scale-110 mb-4">
                                 <i class="fas fa-play ml-1 text-white"></i>
                             </div>
-                            <span class="text-white font-bold tracking-widest uppercase text-xs glass px-6 py-2 rounded-full border border-white/20">
-                                Stop searching. Start working.
+                            <span class="text-white font-bold tracking-widest uppercase text-xs glass px-6 py-2 rounded-full border border-white/20 text-center">
+                                Smetti di cercare. Inizia a lavorare.
                             </span>
                         </a>
                         
-                        <!-- Badge: Optimized for Windows -->
                         <div class="absolute bottom-8 left-8 glass px-5 py-3 rounded-2xl text-sm font-bold flex items-center gap-3 border border-white/20">
                             <i class="fab fa-windows text-blue-400"></i>
-                            <span>Optimized for Windows 11</span>
+                            <span>Ottimizzato per Windows 11</span>
                         </div>
                     </div>
                     
-                    <!-- Badge: 90% Cleaner (Bouncing) -->
-                    <div class="hidden lg:block absolute -top-8 -right-8 glass p-6 rounded-3xl border border-blue-500/30 shadow-2xl animate-bounce">
+                    <div class="hidden lg:block absolute -top-8 -right-8 glass p-6 rounded-3xl border border-blue-500/30 shadow-2xl animate-bounce text-center">
                          <div class="text-blue-400 font-black text-2xl mb-1">90% Cleaner</div>
-                         <div class="text-[10px] text-gray-400 uppercase font-bold tracking-widest">Workspace Transformation</div>
+                         <div class="text-[10px] text-gray-400 uppercase font-bold tracking-widest">Trasformazione Workspace</div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Features Section -->
+        <!-- Sezione Funzionalità -->
         <section id="features" class="py-32 bg-[#08080a]">
             <div class="max-w-7xl mx-auto px-6 text-center">
-                <h2 class="text-4xl font-extrabold mb-16">Why MultiDesk?</h2>
+                <h2 class="text-4xl font-extrabold mb-16">Perché MultiDesk?</h2>
                 <div class="grid md:grid-cols-3 gap-8">
                     <div class="p-10 rounded-[2.5rem] glass feature-card flex flex-col text-left">
                         <div class="w-14 h-14 bg-blue-500/10 text-blue-500 rounded-2xl flex items-center justify-center mb-8 text-2xl border border-blue-500/20">
                             <i class="fas fa-layer-group"></i>
                         </div>
-                        <h3 class="text-2xl font-bold mb-4">Spaces, not windows</h3>
-                        <p class="text-gray-400 mb-8 leading-relaxed">MultiDesk focuses on organization. Each space has its own shortcuts (.lnk) and an optional dedicated wallpaper.</p>
+                        <h3 class="text-2xl font-bold mb-4">Spazi, non finestre</h3>
+                        <p class="text-gray-400 mb-8 leading-relaxed">MultiDesk si concentra sull'organizzazione. Ogni spazio ha scorciatoie proprie e sfondi opzionali dedicati.</p>
                     </div>
 
                     <div class="p-10 rounded-[2.5rem] glass feature-card flex flex-col text-left">
                         <div class="w-14 h-14 bg-purple-500/10 text-purple-500 rounded-2xl flex items-center justify-center mb-8 text-2xl border border-purple-500/20">
                             <i class="fas fa-bolt"></i>
                         </div>
-                        <h3 class="text-2xl font-bold mb-4">High Performance</h3>
-                        <p class="text-gray-400 mb-8 leading-relaxed">Optimized for speed. Spaces load instantly and wallpaper files are handled without system stuttering.</p>
+                        <h3 class="text-2xl font-bold mb-4">Alte Prestazioni</h3>
+                        <p class="text-gray-400 mb-8 leading-relaxed">Ottimizzato per la velocità. Gli spazi caricano istantaneamente senza rallentare il sistema.</p>
                     </div>
 
                     <div class="p-10 rounded-[2.5rem] glass feature-card flex flex-col text-left">
                         <div class="w-14 h-14 bg-green-500/10 text-green-500 rounded-2xl flex items-center justify-center mb-8 text-2xl border border-green-500/20">
-                            <i class="fas fa-user-focus"></i>
+                            <i class="fas fa-bullseye"></i>
                         </div>
                         <h3 class="text-2xl font-bold mb-4">Total Focus</h3>
-                        <p class="text-gray-400 mb-8 leading-relaxed">Customize icon layouts for every task. Your organization remains consistent even after a system reboot.</p>
+                        <p class="text-gray-400 mb-8 leading-relaxed">Personalizza il layout delle icone per ogni task. L'organizzazione rimane coerente anche dopo il riavvio.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Pricing Section -->
+        <!-- Sezione Prezzi -->
         <section id="pricing" class="py-32 bg-[#0c0c0e]">
             <div class="max-w-5xl mx-auto px-6 text-center">
-                <h2 class="text-4xl font-extrabold mb-16">Plans</h2>
+                <h2 class="text-4xl font-extrabold mb-16">Piani</h2>
                 <div class="grid md:grid-cols-2 gap-8">
                     <div class="p-10 glass rounded-[2.5rem] border-white/5 text-left">
                         <h3 class="text-2xl font-bold mb-2 text-gray-300">Trial</h3>
-                        <div class="text-4xl font-extrabold mb-8">Free</div>
+                        <div class="text-4xl font-extrabold mb-8">Gratis</div>
                         <ul class="space-y-4 text-gray-400 mb-10">
-                            <li class="flex items-center"><i class="fas fa-check-circle text-gray-600 mr-3"></i> Up to 2 workspaces</li>
-                            <li class="flex items-center"><i class="fas fa-check-circle text-gray-600 mr-3"></i> Max 5 shortcuts per space</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-gray-600 mr-3"></i> Fino a 2 workspace</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-gray-600 mr-3"></i> Max 5 shortcut per spazio</li>
                         </ul>
                     </div>
 
                     <div class="p-10 bg-blue-600/10 rounded-[2.5rem] border border-blue-500/30 relative text-left">
-                        <div class="absolute top-8 right-8 pro-badge px-4 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest text-white">One-Time</div>
+                        <div class="absolute top-8 right-8 pro-badge px-4 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest text-white">Una Tantum</div>
                         <h3 class="text-2xl font-bold mb-2 text-blue-400">Pro Add-on</h3>
-                        <div class="text-4xl font-extrabold mb-8">Unlock Everything</div>
+                        <div class="text-4xl font-extrabold mb-8">Sblocca Tutto</div>
                         <ul class="space-y-4 text-gray-200 mb-10">
-                            <li class="flex items-center"><i class="fas fa-star text-yellow-500 mr-3"></i> Unlimited workspaces</li>
-                            <li class="flex items-center"><i class="fas fa-star text-yellow-500 mr-3"></i> Unlimited shortcuts</li>
+                            <li class="flex items-center"><i class="fas fa-star text-yellow-500 mr-3"></i> Workspace illimitati</li>
+                            <li class="flex items-center"><i class="fas fa-star text-yellow-500 mr-3"></i> Shortcut illimitati</li>
                         </ul>
-                        <a href="https://apps.microsoft.com/detail/9PJH89938L7M" target="_blank" class="block w-full text-center py-4 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-2xl transition">Get Pro</a>
+                        <a href="https://apps.microsoft.com/detail/9PJH89938L7M" target="_blank" class="block w-full text-center py-4 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-2xl transition">Ottieni Pro</a>
                     </div>
                 </div>
             </div>
@@ -207,22 +216,22 @@
                 <div class="mb-10 flex justify-center">
                     <img src="GMArt_Logo.jpg" alt="GMArt" class="w-14 h-14 rounded-xl opacity-60">
                 </div>
-                <h2 class="text-2xl font-bold mb-4 tracking-tighter uppercase">MULTIDESK</h2>
+                <img src="https://github.com/GMArt-creator/MultiDesk/blob/main/Multidesk_Logo_Text.png?raw=true" alt="MultiDesk" class="h-8 mx-auto mb-4 opacity-80">
                 <div class="flex justify-center space-x-6 text-gray-400 mb-10">
-                    <a href="javascript:void(0)" onclick="showPage('support')" class="hover:text-blue-500 transition">Support</a>
+                    <a href="javascript:void(0)" onclick="showPage('support')" class="hover:text-blue-500 transition">Supporto</a>
                     <a href="#privacy" class="hover:text-blue-500 transition" onclick="showPage('support'); setTimeout(() => document.getElementById('privacy').scrollIntoView(), 200)">Privacy Policy</a>
                 </div>
-                <p class="text-gray-600 text-xs">© 2026 GMArt Engineering. All rights reserved.</p>
+                <p class="text-gray-600 text-xs text-center">© 2026 GMArt Engineering. Tutti i diritti riservati.</p>
             </div>
         </footer>
     </main>
 
-    <!-- PAGE: SUPPORT -->
+    <!-- PAGINA: SUPPORTO -->
     <main id="support-page" class="page-content hidden-page pt-32 pb-20">
         <div class="max-w-4xl mx-auto px-6">
             <div class="text-center mb-16">
-                <h1 class="text-4xl font-bold mb-4">Support & Resources</h1>
-                <p class="text-gray-500">Everything you need to get the most out of MultiDesk.</p>
+                <h1 class="text-4xl font-bold mb-4">Supporto & Risorse</h1>
+                <p class="text-gray-500">Tutto ciò di cui hai bisogno per MultiDesk.</p>
             </div>
             
             <div class="grid md:grid-cols-2 gap-8 mb-12">
@@ -231,60 +240,58 @@
                         <i class="fab fa-youtube"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-4">Video Tutorial</h3>
-                    <p class="text-gray-400 mb-8 text-sm">Watch how to set up your workspaces.</p>
-                    <a href="https://youtu.be/SN_cuaAcLmA" target="_blank" class="text-blue-400 font-bold hover:underline">Watch on YouTube</a>
+                    <p class="text-gray-400 mb-8 text-sm">Scopri come configurare i tuoi workspace.</p>
+                    <a href="https://youtu.be/SN_cuaAcLmA" target="_blank" class="text-blue-400 font-bold hover:underline">Guarda su YouTube</a>
                 </div>
 
                 <div class="glass p-10 rounded-3xl border-purple-500/20 text-center">
                     <div class="w-12 h-12 bg-purple-500/10 text-purple-500 rounded-xl flex items-center justify-center mb-6 text-xl mx-auto">
                         <i class="fas fa-file-pdf"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4">User Guide (PDF)</h3>
-                    <p class="text-gray-400 mb-8 text-sm">Full documentation in PDF format.</p>
-                    <a href="https://raw.githubusercontent.com/GMArt-creator/MultiDesk/main/MultiDesk_User_Guide.pdf" target="_blank" class="text-blue-400 font-bold hover:underline">Open PDF</a>
+                    <h3 class="text-xl font-bold mb-4">Guida Utente (PDF)</h3>
+                    <p class="text-gray-400 mb-8 text-sm">Documentazione completa in PDF.</p>
+                    <a href="https://raw.githubusercontent.com/GMArt-creator/MultiDesk/main/MultiDesk_User_Guide.pdf" target="_blank" class="text-blue-400 font-bold hover:underline">Apri PDF</a>
                 </div>
             </div>
 
-            <!-- Email Support Section -->
+            <!-- Email Support -->
             <div class="glass p-10 rounded-[2.5rem] border-white/5 text-center mb-12">
                 <div class="w-12 h-12 bg-blue-500/10 text-blue-500 rounded-xl flex items-center justify-center mb-6 text-xl mx-auto">
                     <i class="fas fa-envelope"></i>
                 </div>
-                <h3 class="text-2xl font-bold mb-4">Direct Email Support</h3>
-                <p class="text-gray-400 mb-6 max-w-md mx-auto">Have specific questions or feedback? Contact our engineering team directly.</p>
+                <h3 class="text-2xl font-bold mb-4">Contatto Diretto</h3>
+                <p class="text-gray-400 mb-6 max-w-md mx-auto text-center">Hai domande o feedback? Contatta direttamente il nostro team.</p>
                 <a href="mailto:MultiDesktop@hotmail.com" class="inline-block px-8 py-3 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-2xl transition shadow-lg shadow-blue-600/20">
                     MultiDesktop@hotmail.com
                 </a>
             </div>
 
-            <!-- Privacy Policy Section -->
+            <!-- Privacy Policy -->
             <div id="privacy" class="glass p-10 rounded-[2.5rem] border-white/5 text-left mb-12">
                 <h2 class="text-3xl font-bold mb-8">Privacy Policy</h2>
-                <div class="space-y-6 text-gray-400 text-sm leading-relaxed">
-                    <p>At MultiDesk, we value your privacy. This policy explains how our application handles information.</p>
+                <div class="space-y-6 text-gray-400 text-sm leading-relaxed text-left">
+                    <p>In MultiDesk, diamo valore alla tua privacy.</p>
                     
                     <div>
-                        <h4 class="text-white font-bold mb-2 uppercase tracking-widest text-[10px]">Data Collection</h4>
-                        <p>MultiDesk is a local productivity tool. We do not collect, store, or transmit any personal data, desktop files, or browsing history to external servers. All workspace configurations and shortcut links are stored locally on your device.</p>
+                        <h4 class="text-white font-bold mb-2 uppercase tracking-widest text-[10px]">Raccolta Dati</h4>
+                        <p>MultiDesk è uno strumento locale. Non raccogliamo, né trasmettiamo dati personali o file a server esterni. Tutte le configurazioni sono salvate localmente sul dispositivo.</p>
                     </div>
 
                     <div>
                         <h4 class="text-white font-bold mb-2 uppercase tracking-widest text-[10px]">Microsoft Store</h4>
-                        <p>As the app is distributed via the Microsoft Store, Microsoft may collect basic telemetry data as outlined in their privacy policy. We do not have access to your personal identity or payment information.</p>
+                        <p>L'app è distribuita tramite il Microsoft Store; Microsoft potrebbe raccogliere dati di telemetria di base come indicato nella loro policy.</p>
                     </div>
 
                     <div>
-                        <h4 class="text-white font-bold mb-2 uppercase tracking-widest text-[10px]">Permissions</h4>
-                        <p>The app requires permissions to manage desktop icons and change system wallpapers to provide its core functionality. These actions are performed exclusively on your local machine.</p>
+                        <h4 class="text-white font-bold mb-2 uppercase tracking-widest text-[10px]">Permessi</h4>
+                        <p>L'app richiede i permessi per gestire le icone del desktop e cambiare lo sfondo per fornire le sue funzioni principali.</p>
                     </div>
-
-                    <p class="pt-4 border-t border-white/5">For further inquiries regarding privacy, please contact us at MultiDesktop@hotmail.com.</p>
                 </div>
             </div>
 
             <div class="mt-12 text-center">
                 <button onclick="showPage('home')" class="text-blue-500 font-bold hover:text-blue-400 transition">
-                    <i class="fas fa-arrow-left mr-2"></i> Back to Home
+                    <i class="fas fa-arrow-left mr-2"></i> Torna alla Home
                 </button>
             </div>
         </div>
@@ -314,4 +321,3 @@
     </script>
 </body>
 </html>
-
