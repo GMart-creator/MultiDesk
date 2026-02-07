@@ -108,6 +108,7 @@
             <div class="hidden md:flex space-x-8 text-sm font-medium text-gray-400">
                 <a href="javascript:void(0)" onclick="showPage('home')" class="hover:text-white transition">Home</a>
                 <a href="javascript:void(0)" onclick="showPage('home', 'features')" class="hover:text-white transition">Features</a>
+                <a href="javascript:void(0)" onclick="showPage('home', 'pricing')" class="hover:text-white transition">Plans</a>
                 <a href="javascript:void(0)" onclick="showPage('faq')" class="hover:text-white transition">FAQ</a>
                 <a href="javascript:void(0)" onclick="showPage('support')" class="hover:text-white transition">Support</a>
             </div>
@@ -201,7 +202,7 @@
         <section id="pricing" class="py-32 bg-[#0c0c0e]">
             <div class="max-w-7xl mx-auto px-6 text-center">
                 <h2 class="text-4xl font-extrabold mb-16">Plans</h2>
-                <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-8">
                     <div class="p-10 glass rounded-[2.5rem] border-white/5 text-left">
                         <h3 class="text-2xl font-bold mb-2 text-gray-300">Trial</h3>
                         <div class="text-4xl font-extrabold mb-8">Free</div>
@@ -339,7 +340,23 @@
                         </div>
                     </div>
 
-                    <!-- Q9 -->
+                    <!-- Q9 (NEW) -->
+                    <div class="faq-item">
+                        <div class="faq-question flex items-center justify-between p-4 md:p-6 hover:bg-white/5 rounded-2xl" onclick="toggleFaq(this)">
+                            <span class="text-lg font-bold text-gray-200">Why does MultiDesk use the system tray to reopen or exit the app?</span>
+                            <i class="fas fa-chevron-down faq-icon text-gray-500"></i>
+                        </div>
+                        <div class="faq-answer px-6">
+                            <p class="mb-3">MultiDesk is designed to work like a persistent workspace layer—especially in full screen mode and when "Start with Windows" is enabled. For this reason, MultiDesk is meant to stay running in the background and be quickly shown/hidden without interrupting your workflow.</p>
+                            <ul class="list-disc ml-5 space-y-2 mb-3">
+                                <li>If you click <strong>Hide</strong>, MultiDesk hides its windows but continues running.</li>
+                                <li>To <strong>show it again</strong> (after hiding) or to <strong>exit completely</strong>, use the system tray icon.</li>
+                            </ul>
+                            <p>This “tray-first” behavior prevents accidental exits and keeps your workspaces instantly available whenever you need them.</p>
+                        </div>
+                    </div>
+
+                    <!-- Q10 -->
                     <div class="faq-item">
                         <div class="faq-question flex items-center justify-between p-4 md:p-6 hover:bg-white/5 rounded-2xl" onclick="toggleFaq(this)">
                             <span class="text-lg font-bold text-gray-200">Can I use MultiDesk in full screen?</span>
@@ -350,7 +367,7 @@
                         </div>
                     </div>
 
-                    <!-- Q10 -->
+                    <!-- Q11 -->
                     <div class="faq-item">
                         <div class="faq-question flex items-center justify-between p-4 md:p-6 hover:bg-white/5 rounded-2xl" onclick="toggleFaq(this)">
                             <span class="text-lg font-bold text-gray-200">How do I upgrade to Pro?</span>
@@ -361,7 +378,7 @@
                         </div>
                     </div>
 
-                    <!-- Q11 -->
+                    <!-- Q12 -->
                     <div class="faq-item">
                         <div class="faq-question flex items-center justify-between p-4 md:p-6 hover:bg-white/5 rounded-2xl" onclick="toggleFaq(this)">
                             <span class="text-lg font-bold text-gray-200">Trial still showing after purchase?</span>
@@ -441,9 +458,10 @@
             </div>
             <img src="https://github.com/GMArt-creator/MultiDesk/blob/main/Multidesk_Logo_Text.png?raw=true" alt="MultiDesk" class="h-8 mx-auto mb-4 opacity-80">
             <div class="flex justify-center space-x-6 text-gray-400 mb-10">
+                <a href="javascript:void(0)" onclick="showPage('home')" class="hover:text-blue-500 transition">Home</a>
+                <a href="javascript:void(0)" onclick="showPage('home', 'pricing')" class="hover:text-blue-500 transition">Plans</a>
                 <a href="javascript:void(0)" onclick="showPage('faq')" class="hover:text-blue-500 transition">FAQ</a>
                 <a href="javascript:void(0)" onclick="showPage('support')" class="hover:text-blue-500 transition">Support</a>
-                <a href="#privacy" class="hover:text-blue-500 transition" onclick="showPage('support'); setTimeout(() => document.getElementById('privacy').scrollIntoView({behavior: 'smooth'}), 200)">Privacy</a>
             </div>
             <p class="text-gray-600 text-xs text-center">© 2026 GMArt Engineering. All rights reserved.</p>
         </div>
