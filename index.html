@@ -57,7 +57,6 @@
             perspective: 1000px;
         }
 
-        /* Effect for the textual logo in nav */
         .nav-logo-text {
             height: 32px;
             filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.3));
@@ -65,6 +64,31 @@
         }
         .nav-logo-text:hover {
             transform: scale(1.05);
+        }
+
+        /* FAQ Accordion Styles */
+        .faq-item {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .faq-question {
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), padding 0.3s ease;
+            color: #94a3b8;
+        }
+        .faq-item.active .faq-answer {
+            max-height: 1000px;
+            padding-bottom: 1.5rem;
+        }
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+        .faq-icon {
+            transition: transform 0.3s ease;
         }
     </style>
 </head>
@@ -77,19 +101,17 @@
                 <div class="w-10 h-10 bg-slate-800 rounded-xl flex items-center justify-center overflow-hidden border border-white/10">
                     <img src="MultiDesk_Logo.jpg" alt="M" class="object-contain w-full h-full" onerror="this.src='https://via.placeholder.com/50/1e293b/cbd5e1?text=M'">
                 </div>
-                <!-- MultiDesk Textual Logo -->
                 <img src="https://github.com/GMArt-creator/MultiDesk/blob/main/Multidesk_Logo_Text.png?raw=true" alt="MultiDesk by GMArt" class="nav-logo-text hidden sm:block">
                 <span class="text-xl font-bold tracking-tighter uppercase sm:hidden">MULTIDESK</span>
             </div>
             
             <div class="hidden md:flex space-x-8 text-sm font-medium text-gray-400">
                 <a href="javascript:void(0)" onclick="showPage('home')" class="hover:text-white transition">Home</a>
-                <a href="#features" class="hover:text-white transition">Features</a>
-                <a href="#pricing" class="hover:text-white transition">Pricing</a>
+                <a href="javascript:void(0)" onclick="showPage('home', 'features')" class="hover:text-white transition">Features</a>
+                <a href="javascript:void(0)" onclick="showPage('faq')" class="hover:text-white transition">FAQ</a>
                 <a href="javascript:void(0)" onclick="showPage('support')" class="hover:text-white transition">Support</a>
             </div>
 
-            <!-- Button with Microsoft Store icon -->
             <a href="https://apps.microsoft.com/detail/9PJH89938L7M" target="_blank" class="bg-blue-600 hover:bg-blue-700 px-6 py-2.5 rounded-full font-bold transition text-sm shadow-lg shadow-blue-600/20 flex items-center gap-2">
                 <i class="fab fa-microsoft text-base"></i>
                 <span>Download from Store</span>
@@ -117,8 +139,8 @@
                     <a href="https://apps.microsoft.com/detail/9PJH89938L7M" target="_blank" class="w-full sm:w-auto px-10 py-4 bg-white text-black font-extrabold rounded-2xl hover:bg-blue-600 hover:text-white transition duration-300 flex items-center justify-center shadow-xl">
                         <i class="fab fa-microsoft mr-3"></i> Microsoft Store
                     </a>
-                    <a href="#features" class="w-full sm:w-auto px-10 py-4 glass font-bold rounded-2xl hover:bg-white/10 transition border border-white/10 text-center">
-                        Features / Demo
+                    <a href="javascript:void(0)" onclick="showPage('faq')" class="w-full sm:w-auto px-10 py-4 glass font-bold rounded-2xl hover:bg-white/10 transition border border-white/10 text-center">
+                        Read FAQ
                     </a>
                 </div>
 
@@ -141,11 +163,6 @@
                             <span>Optimized for Windows 11</span>
                         </div>
                     </div>
-                    
-                    <div class="hidden lg:block absolute -top-8 -right-8 glass p-6 rounded-3xl border border-blue-500/30 shadow-2xl animate-bounce text-center">
-                         <div class="text-blue-400 font-black text-2xl mb-1">90% Cleaner</div>
-                         <div class="text-[10px] text-gray-400 uppercase font-bold tracking-widest">Workspace Transformation</div>
-                    </div>
                 </div>
             </div>
         </section>
@@ -162,7 +179,6 @@
                         <h3 class="text-2xl font-bold mb-4">Spaces, not windows</h3>
                         <p class="text-gray-400 mb-8 leading-relaxed">MultiDesk focuses on organization. Each space has its own shortcuts and optional dedicated wallpapers.</p>
                     </div>
-
                     <div class="p-10 rounded-[2.5rem] glass feature-card flex flex-col text-left">
                         <div class="w-14 h-14 bg-purple-500/10 text-purple-500 rounded-2xl flex items-center justify-center mb-8 text-2xl border border-purple-500/20">
                             <i class="fas fa-bolt"></i>
@@ -170,7 +186,6 @@
                         <h3 class="text-2xl font-bold mb-4">High Performance</h3>
                         <p class="text-gray-400 mb-8 leading-relaxed">Optimized for speed. Spaces load instantly without slowing down your system.</p>
                     </div>
-
                     <div class="p-10 rounded-[2.5rem] glass feature-card flex flex-col text-left">
                         <div class="w-14 h-14 bg-green-500/10 text-green-500 rounded-2xl flex items-center justify-center mb-8 text-2xl border border-green-500/20">
                             <i class="fas fa-bullseye"></i>
@@ -195,7 +210,6 @@
                             <li class="flex items-center"><i class="fas fa-check-circle text-gray-600 mr-3"></i> Max 5 shortcuts per space</li>
                         </ul>
                     </div>
-
                     <div class="p-10 bg-blue-600/10 rounded-[2.5rem] border border-blue-500/30 relative text-left">
                         <div class="absolute top-8 right-8 pro-badge px-4 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest text-white">One-Time</div>
                         <h3 class="text-2xl font-bold mb-2 text-blue-400">Pro Add-on</h3>
@@ -209,29 +223,165 @@
                 </div>
             </div>
         </section>
+    </main>
 
-        <!-- Footer -->
-        <footer class="py-20 border-t border-white/5">
-            <div class="max-w-7xl mx-auto px-6 text-center">
-                <div class="mb-10 flex justify-center">
-                    <img src="GMArt_Logo.jpg" alt="GMArt" class="w-14 h-14 rounded-xl opacity-60">
+    <!-- PAGE: FAQ -->
+    <main id="faq-page" class="page-content hidden-page pt-32 pb-20">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <div class="inline-block p-3 bg-blue-600/10 rounded-2xl mb-4 border border-blue-500/20">
+                    <i class="fas fa-question-circle text-2xl text-blue-500"></i>
                 </div>
-                <img src="https://github.com/GMArt-creator/MultiDesk/blob/main/Multidesk_Logo_Text.png?raw=true" alt="MultiDesk" class="h-8 mx-auto mb-4 opacity-80">
-                <div class="flex justify-center space-x-6 text-gray-400 mb-10">
-                    <a href="javascript:void(0)" onclick="showPage('support')" class="hover:text-blue-500 transition">Support</a>
-                    <a href="#privacy" class="hover:text-blue-500 transition" onclick="showPage('support'); setTimeout(() => document.getElementById('privacy').scrollIntoView(), 200)">Privacy Policy</a>
+                <h1 class="text-4xl md:text-5xl font-extrabold mb-4">Frequently Asked Questions</h1>
+                <p class="text-gray-400 text-lg">Quick answers to help you get the most out of MultiDesk.</p>
+                
+                <div class="mt-8 relative max-w-xl mx-auto">
+                    <input type="text" id="faq-search" placeholder="Search keywords..." class="w-full bg-white/5 border border-white/10 rounded-2xl py-4 px-12 focus:outline-none focus:border-blue-500/50 transition">
+                    <i class="fas fa-search absolute left-4 top-1/2 -translate-y-1/2 text-gray-500"></i>
                 </div>
-                <p class="text-gray-600 text-xs text-center">© 2026 GMArt Engineering. All rights reserved.</p>
             </div>
-        </footer>
+
+            <div class="glass rounded-[2.5rem] overflow-hidden border-white/5 p-4 md:p-8">
+                <div class="space-y-2" id="faq-list">
+                    <!-- Q1 -->
+                    <div class="faq-item">
+                        <div class="faq-question flex items-center justify-between p-4 md:p-6 hover:bg-white/5 rounded-2xl" onclick="toggleFaq(this)">
+                            <span class="text-lg font-bold text-gray-200">What is MultiDesk?</span>
+                            <i class="fas fa-chevron-down faq-icon text-gray-500"></i>
+                        </div>
+                        <div class="faq-answer px-6">
+                            <p>MultiDesk is a lightweight workspace organizer for Windows. It lets you create multiple desktop-like workspaces, each with its own shortcuts and optional wallpaper, and switch between them instantly using a floating bar.</p>
+                        </div>
+                    </div>
+
+                    <!-- Q2 -->
+                    <div class="faq-item">
+                        <div class="faq-question flex items-center justify-between p-4 md:p-6 hover:bg-white/5 rounded-2xl" onclick="toggleFaq(this)">
+                            <span class="text-lg font-bold text-gray-200">Is MultiDesk the same as Windows Virtual Desktops?</span>
+                            <i class="fas fa-chevron-down faq-icon text-gray-500"></i>
+                        </div>
+                        <div class="faq-answer px-6">
+                            <p class="mb-4">MultiDesk is more than Windows Virtual Desktops because it organizes your workflow at the desktop content level, not just at the window level. While Windows Virtual Desktops mainly separate open windows, MultiDesk adds a dedicated layer for:</p>
+                            <ul class="list-disc ml-5 space-y-2">
+                                <li><strong>Workspace-specific shortcuts (.lnk)</strong>: Different tools for each project.</li>
+                                <li><strong>Optional wallpapers</strong>: Instant visual context switching.</li>
+                                <li><strong>Saved icon layouts</strong>: Remembered position per workspace.</li>
+                                <li><strong>Fast switching</strong>: A persistent, floating numbered bar for one-click access.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Q3 -->
+                    <div class="faq-item">
+                        <div class="faq-question flex items-center justify-between p-4 md:p-6 hover:bg-white/5 rounded-2xl" onclick="toggleFaq(this)">
+                            <span class="text-lg font-bold text-gray-200">What file types are supported?</span>
+                            <i class="fas fa-chevron-down faq-icon text-gray-500"></i>
+                        </div>
+                        <div class="faq-answer px-6">
+                            <p>MultiDesk displays Windows shortcut files (.lnk). Other file types are currently ignored to keep your workspace clean and efficient.</p>
+                        </div>
+                    </div>
+
+                    <!-- Q4 -->
+                    <div class="faq-item">
+                        <div class="faq-question flex items-center justify-between p-4 md:p-6 hover:bg-white/5 rounded-2xl" onclick="toggleFaq(this)">
+                            <span class="text-lg font-bold text-gray-200">Where are my workspaces stored?</span>
+                            <i class="fas fa-chevron-down faq-icon text-gray-500"></i>
+                        </div>
+                        <div class="faq-answer px-6">
+                            <p>Workspaces are stored locally on your machine at:<br>
+                            <code class="bg-black/40 px-2 py-1 rounded text-blue-400 text-sm mt-2 inline-block">%LocalAppData%\MultiDesk\Workspaces\</code><br>
+                            Each workspace has its own items folder and configuration data.</p>
+                        </div>
+                    </div>
+
+                    <!-- Q5 -->
+                    <div class="faq-item">
+                        <div class="faq-question flex items-center justify-between p-4 md:p-6 hover:bg-white/5 rounded-2xl" onclick="toggleFaq(this)">
+                            <span class="text-lg font-bold text-gray-200">Can I move or copy shortcuts between workspaces?</span>
+                            <i class="fas fa-chevron-down faq-icon text-gray-500"></i>
+                        </div>
+                        <div class="faq-answer px-6">
+                            <p>Yes! Simply right-click an icon and use the Move to... or Copy to... context menu options to manage your shortcuts across different workspaces.</p>
+                        </div>
+                    </div>
+
+                    <!-- Q6 -->
+                    <div class="faq-item">
+                        <div class="faq-question flex items-center justify-between p-4 md:p-6 hover:bg-white/5 rounded-2xl" onclick="toggleFaq(this)">
+                            <span class="text-lg font-bold text-gray-200">What happens when I delete a shortcut?</span>
+                            <i class="fas fa-chevron-down faq-icon text-gray-500"></i>
+                        </div>
+                        <div class="faq-answer px-6">
+                            <p>Safety first: when you delete a shortcut from MultiDesk, the .lnk file is sent to the Windows Recycle Bin, not permanently deleted. You can restore it anytime if needed.</p>
+                        </div>
+                    </div>
+
+                    <!-- Q7 -->
+                    <div class="faq-item">
+                        <div class="faq-question flex items-center justify-between p-4 md:p-6 hover:bg-white/5 rounded-2xl" onclick="toggleFaq(this)">
+                            <span class="text-lg font-bold text-gray-200">Does MultiDesk support multi-monitor setups?</span>
+                            <i class="fas fa-chevron-down faq-icon text-gray-500"></i>
+                        </div>
+                        <div class="faq-answer px-6">
+                            <p>MultiDesk currently runs as a single workspace surface. If you use multiple monitors, it will display its workspace window on one monitor at a time, while the floating switcher bar remains available for navigation. Full multi-monitor expansion is a prioritized feature for a future Pro update.</p>
+                        </div>
+                    </div>
+
+                    <!-- Q8 -->
+                    <div class="faq-item">
+                        <div class="faq-question flex items-center justify-between p-4 md:p-6 hover:bg-white/5 rounded-2xl" onclick="toggleFaq(this)">
+                            <span class="text-lg font-bold text-gray-200">Does MultiDesk start automatically with Windows?</span>
+                            <i class="fas fa-chevron-down faq-icon text-gray-500"></i>
+                        </div>
+                        <div class="faq-answer px-6">
+                            <p>Yes, there is a "Start with Windows" option in the settings. Note that on some Microsoft Store versions, this behavior is managed by Windows App execution policies.</p>
+                        </div>
+                    </div>
+
+                    <!-- Q9 -->
+                    <div class="faq-item">
+                        <div class="faq-question flex items-center justify-between p-4 md:p-6 hover:bg-white/5 rounded-2xl" onclick="toggleFaq(this)">
+                            <span class="text-lg font-bold text-gray-200">Can I use MultiDesk in full screen?</span>
+                            <i class="fas fa-chevron-down faq-icon text-gray-500"></i>
+                        </div>
+                        <div class="faq-answer px-6">
+                            <p>Yes. MultiDesk offers a dedicated full-screen mode that respects the Windows work area, ensuring your Taskbar remains accessible while you enjoy a focused environment.</p>
+                        </div>
+                    </div>
+
+                    <!-- Q10 -->
+                    <div class="faq-item">
+                        <div class="faq-question flex items-center justify-between p-4 md:p-6 hover:bg-white/5 rounded-2xl" onclick="toggleFaq(this)">
+                            <span class="text-lg font-bold text-gray-200">How do I upgrade to Pro?</span>
+                            <i class="fas fa-chevron-down faq-icon text-gray-500"></i>
+                        </div>
+                        <div class="faq-answer px-6">
+                            <p>Inside the app, go to Settings → License and click Buy Pro. The license is linked to your Microsoft Account for easy management across your devices.</p>
+                        </div>
+                    </div>
+
+                    <!-- Q11 -->
+                    <div class="faq-item">
+                        <div class="faq-question flex items-center justify-between p-4 md:p-6 hover:bg-white/5 rounded-2xl" onclick="toggleFaq(this)">
+                            <span class="text-lg font-bold text-gray-200">Trial still showing after purchase?</span>
+                            <i class="fas fa-chevron-down faq-icon text-gray-500"></i>
+                        </div>
+                        <div class="faq-answer px-6">
+                            <p>First, ensure you are signed into the Microsoft Store with the purchasing account. Then try: 1) Restarting MultiDesk, 2) Clicking Restore purchases in the License settings. If issues persist, a Windows restart usually triggers the Store's license refresh.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 
     <!-- PAGE: SUPPORT -->
     <main id="support-page" class="page-content hidden-page pt-32 pb-20">
         <div class="max-w-4xl mx-auto px-6">
             <div class="text-center mb-16">
-                <h1 class="text-4xl font-bold mb-4">Support & Resources</h1>
-                <p class="text-gray-500">Everything you need for MultiDesk.</p>
+                <h1 class="text-4xl font-extrabold mb-4">Support & Resources</h1>
+                <p class="text-gray-400">Everything you need to master MultiDesk.</p>
             </div>
             
             <div class="grid md:grid-cols-2 gap-8 mb-12">
@@ -240,7 +390,7 @@
                         <i class="fab fa-youtube"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-4">Video Tutorial</h3>
-                    <p class="text-gray-400 mb-8 text-sm">Discover how to configure your workspaces.</p>
+                    <p class="text-gray-400 mb-8 text-sm">Discover how to configure and use your workspaces efficiently.</p>
                     <a href="https://youtu.be/SN_cuaAcLmA" target="_blank" class="text-blue-400 font-bold hover:underline">Watch on YouTube</a>
                 </div>
 
@@ -249,8 +399,8 @@
                         <i class="fas fa-file-pdf"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-4">User Guide (PDF)</h3>
-                    <p class="text-gray-400 mb-8 text-sm">Full documentation in PDF format.</p>
-                    <a href="https://raw.githubusercontent.com/GMArt-creator/MultiDesk/main/MultiDesk_User_Guide.pdf" target="_blank" class="text-blue-400 font-bold hover:underline">Open PDF</a>
+                    <p class="text-gray-400 mb-8 text-sm">Comprehensive documentation covering every feature.</p>
+                    <a href="https://raw.githubusercontent.com/GMArt-creator/MultiDesk/main/MultiDesk_User_Guide.pdf" target="_blank" class="text-blue-400 font-bold hover:underline">Download PDF</a>
                 </div>
             </div>
 
@@ -260,64 +410,97 @@
                     <i class="fas fa-envelope"></i>
                 </div>
                 <h3 class="text-2xl font-bold mb-4">Direct Contact</h3>
-                <p class="text-gray-400 mb-6 max-w-md mx-auto text-center">Questions or feedback? Contact our team directly.</p>
+                <p class="text-gray-400 mb-6 max-w-md mx-auto">Got a specific question or technical issue? Our team is here to help.</p>
                 <a href="mailto:MultiDesktop@hotmail.com" class="inline-block px-8 py-3 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-2xl transition shadow-lg shadow-blue-600/20">
                     MultiDesktop@hotmail.com
                 </a>
             </div>
 
             <!-- Privacy Policy -->
-            <div id="privacy" class="glass p-10 rounded-[2.5rem] border-white/5 text-left mb-12">
+            <div id="privacy" class="glass p-10 rounded-[2.5rem] border-white/5 text-left">
                 <h2 class="text-3xl font-bold mb-8">Privacy Policy</h2>
-                <div class="space-y-6 text-gray-400 text-sm leading-relaxed text-left">
-                    <p>At MultiDesk, we value your privacy.</p>
-                    
+                <div class="space-y-6 text-gray-400 text-sm leading-relaxed">
+                    <p>At MultiDesk, your privacy is our priority. We believe your workspace is your business, and we keep it that way.</p>
                     <div>
                         <h4 class="text-white font-bold mb-2 uppercase tracking-widest text-[10px]">Data Collection</h4>
-                        <p>MultiDesk is a local tool. We do not collect or transmit personal data or files to external servers. All configurations are saved locally on your device.</p>
+                        <p>MultiDesk is a local application. We do not collect, store, or transmit your personal data, shortcut paths, or files to any external servers. All workspace configurations and settings are saved locally on your hard drive.</p>
                     </div>
-
                     <div>
-                        <h4 class="text-white font-bold mb-2 uppercase tracking-widest text-[10px]">Microsoft Store</h4>
-                        <p>The app is distributed via the Microsoft Store; Microsoft may collect basic telemetry data as indicated in their policy.</p>
-                    </div>
-
-                    <div>
-                        <h4 class="text-white font-bold mb-2 uppercase tracking-widest text-[10px]">Permissions</h4>
-                        <p>The app requires permissions to manage desktop icons and change the wallpaper to provide its core functions.</p>
+                        <h4 class="text-white font-bold mb-2 uppercase tracking-widest text-[10px]">Local Storage</h4>
+                        <p>All app data resides in your local AppData folder. If you delete the app and clear local data, all your workspace configurations are gone forever, as we have no cloud backups of your personal setup.</p>
                     </div>
                 </div>
-            </div>
-
-            <div class="mt-12 text-center">
-                <button onclick="showPage('home')" class="text-blue-500 font-bold hover:text-blue-400 transition">
-                    <i class="fas fa-arrow-left mr-2"></i> Back to Home
-                </button>
             </div>
         </div>
     </main>
 
+    <!-- Footer -->
+    <footer class="py-20 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <div class="mb-10 flex justify-center">
+                <img src="GMArt_Logo.jpg" alt="GMArt" class="w-14 h-14 rounded-xl opacity-60">
+            </div>
+            <img src="https://github.com/GMArt-creator/MultiDesk/blob/main/Multidesk_Logo_Text.png?raw=true" alt="MultiDesk" class="h-8 mx-auto mb-4 opacity-80">
+            <div class="flex justify-center space-x-6 text-gray-400 mb-10">
+                <a href="javascript:void(0)" onclick="showPage('faq')" class="hover:text-blue-500 transition">FAQ</a>
+                <a href="javascript:void(0)" onclick="showPage('support')" class="hover:text-blue-500 transition">Support</a>
+                <a href="#privacy" class="hover:text-blue-500 transition" onclick="showPage('support'); setTimeout(() => document.getElementById('privacy').scrollIntoView(), 200)">Privacy</a>
+            </div>
+            <p class="text-gray-600 text-xs text-center">© 2026 GMArt Engineering. All rights reserved.</p>
+        </div>
+    </footer>
+
     <script>
-        function showPage(pageId) {
-            const home = document.getElementById('home-page');
-            const support = document.getElementById('support-page');
+        function showPage(pageId, sectionId = null) {
+            const pages = ['home-page', 'support-page', 'faq-page'];
             
-            home.classList.add('hidden-page');
-            support.classList.add('hidden-page');
-            
-            setTimeout(() => {
-                if (pageId === 'home') {
-                    home.style.display = 'block';
-                    support.style.display = 'none';
-                    setTimeout(() => home.classList.remove('hidden-page'), 50);
-                } else {
-                    home.style.display = 'none';
-                    support.style.display = 'block';
-                    setTimeout(() => support.classList.remove('hidden-page'), 50);
+            // Nasconde tutte le pagine
+            pages.forEach(id => {
+                const el = document.getElementById(id);
+                if (el) {
+                    el.classList.add('hidden-page');
+                    setTimeout(() => el.style.display = 'none', 400);
                 }
-                window.scrollTo(0, 0);
-            }, 100);
+            });
+            
+            // Mostra la pagina selezionata
+            setTimeout(() => {
+                const activePage = document.getElementById(pageId + '-page');
+                if (activePage) {
+                    activePage.style.display = 'block';
+                    setTimeout(() => {
+                        activePage.classList.remove('hidden-page');
+                        
+                        // Gestione scroll verso una sezione specifica
+                        if (sectionId) {
+                            setTimeout(() => {
+                                const section = document.getElementById(sectionId);
+                                if (section) {
+                                    section.scrollIntoView({ behavior: 'smooth' });
+                                }
+                            }, 100);
+                        } else {
+                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                        }
+                    }, 50);
+                }
+            }, 400);
         }
+
+        function toggleFaq(element) {
+            const item = element.parentElement;
+            const isActive = item.classList.contains('active');
+            document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+            if (!isActive) item.classList.add('active');
+        }
+
+        document.getElementById('faq-search')?.addEventListener('input', function(e) {
+            const term = e.target.value.toLowerCase();
+            document.querySelectorAll('.faq-item').forEach(item => {
+                const text = item.textContent.toLowerCase();
+                item.style.display = text.includes(term) ? 'block' : 'none';
+            });
+        });
     </script>
 </body>
 </html>
